@@ -7,7 +7,6 @@ import pages.TodayPage;
 public class PopupSettings {
     public WebKeywords action;
     private String A_INTERGRATION = "//div[@role='menu']//a[10]";
-    private String H2_HEADER_TOKEN = "//h2[@id='api-token-heading']";
     private String INPUT_TOKEN = "//input[@name='api_token']";
     private String BUTTON_EXIT = "//button[@aria-label='Close settings']";
     public PopupSettings(WebKeywords action){
@@ -16,7 +15,6 @@ public class PopupSettings {
 
     @Step("Get access token")
     public String getAccessToken(){
-        action.takeScreenshot();
         action.click(A_INTERGRATION);
         action.scrollToElement(INPUT_TOKEN);
         String accessToken = action.getAttribute(INPUT_TOKEN, "value");

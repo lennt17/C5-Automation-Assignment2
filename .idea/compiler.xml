@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="PracticeAsign2B" />
         <module name="PracticeAssign2B" />
+        <module name="C5-Automation-Assignment2B" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

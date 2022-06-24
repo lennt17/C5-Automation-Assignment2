@@ -23,10 +23,11 @@ public class HandleMenu {
         List<WebElement> elsa = action.findWebElements(GROUP_A_PROJECT);
         for(int i=0; i < els.size(); i++){
             String name = action.getText(els.get(i));
-            if (name.equals(nameProject)){
+            if (name.equals(nameProject) && i == (els.size() -1)){
                 action.click(elsa.get(i));
             }
         }
+        action.takeScreenshot();
         return new ProjectPage(action);
     }
 }

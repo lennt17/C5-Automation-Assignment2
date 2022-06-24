@@ -491,6 +491,24 @@ public class WebKeywords {
 		}
 	}
 
+	public boolean isVisible(String locator) {
+		logger.info(MessageFormat.format("Setting IsVisible for web element located by ''{0}''", locator));
+		try {
+			boolean isVisible = false;
+			WebElement el = findWebElement(locator);
+			if(el.isDisplayed()){
+				isVisible = true;
+			}
+			logger.info(MessageFormat.format(
+					"Setted IsVisible for web element ''{0}'' successfully: ''{1}''", el, isVisible));
+			return isVisible;
+		} catch (Exception e) {
+			logger.info(MessageFormat.format("Cannot set web element located by ''{0}'' isVisible?. Root cause is: ''{1}'' ",
+					locator, e.getMessage()));
+			return false;
+		}
+	}
+
 	// 24. get locator of element
 	public Point getLocator(String locator) {
 		WebElement el = findWebElement(locator);
