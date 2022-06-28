@@ -1,6 +1,7 @@
 ### README
 JDK 11
 
+<<<<<<< HEAD
 // Run project by running testSuites.xml
 
 
