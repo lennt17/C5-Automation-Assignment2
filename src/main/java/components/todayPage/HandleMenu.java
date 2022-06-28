@@ -9,8 +9,6 @@ import java.util.List;
 
 public class HandleMenu {
     public WebKeywords action;
-
-    private String GROUP_LI_PROJECT = "//ul[@id='projects_list']/li";
     private String GROUP_A_PROJECT = "//ul[@id='projects_list']/li//div/a";
     private String GROUP_NAME_PROJECT = "//ul[@id='projects_list']/li//div/a/span[2]";
 
@@ -23,7 +21,7 @@ public class HandleMenu {
         List<WebElement> elsa = action.findWebElements(GROUP_A_PROJECT);
         for(int i=0; i < els.size(); i++){
             String name = action.getText(els.get(i));
-            if (name.equals(nameProject) && i == (els.size() -1)){
+            if (name.equals(nameProject) && i == (els.size())-1){
                 action.click(elsa.get(i));
             }
         }

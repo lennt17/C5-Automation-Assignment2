@@ -2,38 +2,76 @@ package listener;
 
 import WebKeywords.WebKeywords;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.testng.ITestNGListener;
+import org.testng.annotations.*;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.TodayPage;
 import utils.log.LogHelper;
 import org.slf4j.Logger;
 import utils.configs.ConfigSettings;
+
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestNGListener;
 import org.testng.ITestResult;
-import test.TestAsign2B;
+import test.DemoTest;
 
 import io.qameta.allure.Attachment;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
-public class TestNGListener {
+import static io.restassured.RestAssured.given;
+
+public class TestNGListener implements ITestNGListener {
     protected WebKeywords action;
+    protected String accessToken;
 
     private static Logger logger = LogHelper.getLogger();
     private ConfigSettings configSettings;
+    private HomePage homePage;
+    private LoginPage loginPage;
+    private TodayPage todayPage;
+
+    Gson g = new Gson();
+
+    Map<String, Object> mapLogin = new HashMap<>();
 
     public TestNGListener() {
         action = new WebKeywords();
+        this.accessToken = accessToken ;
         configSettings = new ConfigSettings(System.getProperty("user.dir"));
     }
 
-    @Parameters({ "browser" })
+    @Parameters({"browser"})
     @BeforeTest
-    public void beforeTest(String browser) {
+    public void beforeTest(String browser) throws InterruptedException {
         deleteFileFromDirectory();
         action.openBrowser(browser, configSettings.getBaseUrl());
+
+        RestAssured.baseURI = "https://todoist.com/API/v8.7/user/login";
+        mapLogin.put("email", "lennt2k@gmail.com");
+        mapLogin.put("password", "Len181403032");
+        Response res = given()
+                .contentType(ContentType.JSON)
+                .and()
+                .body(mapLogin)
+                .when()
+                .post()
+                .then()
+                .extract().response();
+        res.prettyPrint();
+        Object response = res.as(Object.class);
+        String a = g.toJson(response);
+        JsonObject j = g.fromJson(a, JsonObject.class);
+        accessToken = (j.get("token")).getAsString();
     }
 
     private static String getTestMethodName(ITestResult iTestResult) {
@@ -58,7 +96,7 @@ public class TestNGListener {
 
         // Get driver from DemoTest and assign to local webdriver variable
         Object testClass = iTestResult.getInstance();
-        WebDriver driver = ((TestAsign2B) testClass).getDriver();
+        WebDriver driver = ((DemoTest) testClass).getDriver();
 
         // Allure ScreenshotRobot and SaveTestLog
         if (driver instanceof WebDriver) {
@@ -87,7 +125,7 @@ public class TestNGListener {
     }
 
     @AfterTest
-   public void afterTest() {
+    public void afterTest() {
         action.closeBrowser(configSettings.getBaseUrl());
     }
 }

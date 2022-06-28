@@ -14,13 +14,13 @@ public class LoginPage {
         this.action = action;
     }
 
-    @Step("input email")
+    @Step("Input email")
     public void inputMail(String mail) {
         action.setText(INPUT_EMAIL, mail);
         action.takeScreenshot();
     }
 
-    @Step("input password")
+    @Step("Input password")
     public void inputPassword(String password){
         action.setText(INPUT_PASSWORD, password);
         action.takeScreenshot();

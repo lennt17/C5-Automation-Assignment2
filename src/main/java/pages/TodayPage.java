@@ -11,10 +11,6 @@ public class TodayPage {
     public HandleMenu handleMenu;
     private String BTN_ACCOUNT = "//button[@aria-label='Settings']";
     private String SPAN_SETTINGS = "//span[normalize-space()='Settings']";
-    private String GROUP_LI_PROJECT = "//ul[@id='projects_list']/li";
-    private String GROUP_A_PROJECT = "//ul[@id='projects_list']/li//div/a";
-    private String GROUP_NAME_PROJECT = "//ul[@id='projects_list']/li//div/a/span[2]";
-
 
     public PopupSettings popupSettings;
     public TodayPage(WebKeywords action){
@@ -29,7 +25,7 @@ public class TodayPage {
         return (action.isDisplayed(BTN_ACCOUNT));
     }
 
-    @Step("click settings")
+    @Step("Click settings")
     public void clickSettings(){
         action.click(BTN_ACCOUNT);
         action.click(SPAN_SETTINGS);

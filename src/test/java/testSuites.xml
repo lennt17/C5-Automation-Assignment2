@@ -4,7 +4,7 @@
     <test name="Test Case" preserve-order="true" verbose="2">
         <parameter name="browser" value="Chrome" />
         <classes>
-            <class name="test.TestAsign2B"></class>
+            <class name="test.DemoTest"></class>
         </classes>
     </test>
 </suite>

@@ -5,11 +5,9 @@ import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import listener.TestNGListener;
-import org.testng.annotations.Test;;
+import org.testng.annotations.Test;
 
 import pages.ProjectPage;
-import utils.log.LogHelper;
-import org.slf4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.LoginPage;
@@ -20,22 +18,21 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.basePath;
 import static io.restassured.RestAssured.given;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class TestAsign2B extends TestNGListener {
-    Map<String, Object> map = new HashMap<>();
-    private String namePr = "2406";
-    private String nameTask = "Buy Milk new";
-    private static Logger logger = LogHelper.getLogger();
+public class DemoTest extends TestNGListener {
+    Map<String, Object> mapProject = new HashMap<>();
+    Map<String, Object> mapTask = new HashMap<>();
+    private String nameProject = "Project 2806";
+    private String nameTask = "Task 2806";
     private HomePage homePage;
     private LoginPage loginPage;
     private TodayPage todayPage;
     private ProjectPage projectPage;
     private drivers.DriverManager DriverManager;
-    private String accessToken;
+    Gson g = new Gson();
 
-    public TestAsign2B() {
+    public DemoTest() {
         super();
     }
 
@@ -44,36 +41,37 @@ public class TestAsign2B extends TestNGListener {
     }
 
     @Test(description = "Create project and task through API and then verify in WebUI")
-    public void Test01_CreateProject() throws InterruptedException {
+    public void Test01_TestAPI() throws InterruptedException {
 
         // create project through API
         RestAssured.baseURI = "https://api.todoist.com/rest/v1/";
         basePath = "projects";
-        map.put("name", namePr);
+        mapProject.put("name", nameProject);
         Response re = given()
-                .header("authorization", "Bearer " + "f15f9ca2b7d9cbe3be967b58681e9b3c0a8d1f0c")
+                .header("authorization", "Bearer " + accessToken)
                 .header("Content-Type", "application/json")
                 .when()
-                .body(map)
+                .body(mapProject)
                 .post();
         re.prettyPrint();
 
         Object res = re.as(Object.class);
-        Gson g = new Gson();
         String a = g.toJson(res);
         JsonObject j = g.fromJson(a, JsonObject.class);
 
         // create task through API
         basePath = "/tasks";
-//        String bodyTaskPost = "{\"project_id\": "+ j.get("id") + ", \"content\": " + nameTask + ", \"due_string\": \"tomorrow at 13:00\", \"due_lang\": \"en\", \"priority\": 4}";
-
-        String bodyTaskPost = "{\"project_id\": "+ j.get("id") + ", \"content\": \"Buy Milk new\", \"due_string\": \"tomorrow at 13:00\", \"due_lang\": \"en\", \"priority\": 4}";
+        mapTask.put("project_id", j.get("id").getAsString());
+        mapTask.put("content", nameTask);
+        mapTask.put("due_string", "tomorrow at 13:00");
+        mapTask.put("due_lang", "en");
+        mapTask.put("priority", 4);
 
         Response responTask = given()
-                .header("authorization", "Bearer " + "f15f9ca2b7d9cbe3be967b58681e9b3c0a8d1f0c")
+                .header("authorization", "Bearer " + accessToken)
                 .header("Content-Type", "application/json")
                 .when()
-                .body(bodyTaskPost)
+                .body(mapTask)
                 .post();
         responTask.prettyPrint();
 
@@ -92,23 +90,25 @@ public class TestAsign2B extends TestNGListener {
 
         // verify task in WebUI
         todayPage = todayPage.popupSettings.clickExit();
-        projectPage = todayPage.handleMenu.clickProject(namePr);
+        projectPage = todayPage.handleMenu.clickProject(nameProject);
+        Thread.sleep(2000);
         assertTrue(projectPage.shouldToBeHaveTask(nameTask));
 
         // click checkbox task to not display task and verify
-        projectPage.clickCheckboxTask();
+        projectPage.clickCheckboxTask(nameTask);
         Thread.sleep(3000);
-        assertFalse(projectPage.shouldToBeNotDisplayTask());
+        assertTrue(projectPage.shouldToBeNotDisplayTask(nameTask));
 
         //reOpen task through API
         basePath = "/tasks/" + str_id_task;
-        final String REOPEN =  "/reopen";
+        final String REOPEN = "/reopen";
         Response resp = given()
-                .header("authorization", "Bearer " + "f15f9ca2b7d9cbe3be967b58681e9b3c0a8d1f0c")
+                .header("authorization", "Bearer " + accessToken)
                 .header("Content-Type", "application/json")
                 .post(REOPEN);
         resp.prettyPrint();
 
+        action.refresh();
         Thread.sleep(3000);
 
         // verify task is reopened in WebUI (is displayed again)
