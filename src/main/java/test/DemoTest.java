@@ -80,23 +80,18 @@ public class DemoTest extends TestNGListener {
         JsonObject k = g.fromJson(resTask, JsonObject.class);
         String str_id_task = (k.get("id")).toString();
 
-        // Verify project and task in Web UI
+        //// Verify project and task in Web UI
         homePage = new HomePage(action);
         loginPage = homePage.clickLogin();
         todayPage = loginPage.loginAccount("lennt2k@gmail.com", "Len181403032");
-        Thread.sleep(3000);
-        todayPage.clickSettings();
-        accessToken = todayPage.popupSettings.getAccessToken();
-
-        // verify task in WebUI
-        todayPage = todayPage.popupSettings.clickExit();
+        Thread.sleep(8000);
         projectPage = todayPage.handleMenu.clickProject(nameProject);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         assertTrue(projectPage.shouldToBeHaveTask(nameTask));
 
         // click checkbox task to not display task and verify
         projectPage.clickCheckboxTask(nameTask);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         assertTrue(projectPage.shouldToBeNotDisplayTask(nameTask));
 
         //reOpen task through API
