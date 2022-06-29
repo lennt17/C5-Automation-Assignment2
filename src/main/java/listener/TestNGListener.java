@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestNGListener;
 import org.testng.annotations.*;
 import pages.HomePage;
@@ -17,6 +18,7 @@ import org.slf4j.Logger;
 import utils.configs.ConfigSettings;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,9 +38,6 @@ public class TestNGListener implements ITestNGListener {
 
     private static Logger logger = LogHelper.getLogger();
     private ConfigSettings configSettings;
-    private HomePage homePage;
-    private LoginPage loginPage;
-    private TodayPage todayPage;
 
     Gson g = new Gson();
 
@@ -55,6 +54,8 @@ public class TestNGListener implements ITestNGListener {
     public void beforeTest(String browser) throws InterruptedException {
         deleteFileFromDirectory();
         action.openBrowser(browser, configSettings.getBaseUrl());
+        action.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        action.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
         RestAssured.baseURI = "https://todoist.com/API/v8.7/user/login";
         mapLogin.put("email", "lennt2k@gmail.com");

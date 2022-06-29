@@ -41,7 +41,7 @@ public class DemoTest extends TestNGListener {
     }
 
     @Test(description = "Create project and task through API and then verify in WebUI")
-    public void Test01_TestAPI() throws InterruptedException {
+    public void Test01_TestAPI(){
 
         // create project through API
         RestAssured.baseURI = "https://api.todoist.com/rest/v1/";
@@ -84,14 +84,11 @@ public class DemoTest extends TestNGListener {
         homePage = new HomePage(action);
         loginPage = homePage.clickLogin();
         todayPage = loginPage.loginAccount("lennt2k@gmail.com", "Len181403032");
-        Thread.sleep(8000);
         projectPage = todayPage.handleMenu.clickProject(nameProject);
-        Thread.sleep(5000);
         assertTrue(projectPage.shouldToBeHaveTask(nameTask));
 
         // click checkbox task to not display task and verify
         projectPage.clickCheckboxTask(nameTask);
-        Thread.sleep(5000);
         assertTrue(projectPage.shouldToBeNotDisplayTask(nameTask));
 
         //reOpen task through API
@@ -104,7 +101,6 @@ public class DemoTest extends TestNGListener {
         resp.prettyPrint();
 
         action.refresh();
-        Thread.sleep(3000);
 
         // verify task is reopened in WebUI (is displayed again)
         assertTrue(projectPage.shouldToBeHaveTask(nameTask));
