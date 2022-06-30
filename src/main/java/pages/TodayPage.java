@@ -7,7 +7,6 @@ import io.qameta.allure.Step;
 
 public class TodayPage {
     public WebKeywords action;
-    public TodayPage todayPage;
     public HandleMenu handleMenu;
     private String BTN_ACCOUNT = "//button[@aria-label='Settings']";
     private String SPAN_SETTINGS = "//span[normalize-space()='Settings']";

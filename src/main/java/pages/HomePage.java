@@ -11,7 +11,6 @@ public class HomePage {
 
     private String A_LOGIN = "//a[@class='_1vrBX-JExqmMRnkPWrYFN9'][normalize-space()='Log in']";
 
-    public HomePage homePage;
     public HomePage(WebKeywords action) {
         this.action = action;
     }

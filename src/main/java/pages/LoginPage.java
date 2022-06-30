@@ -8,7 +8,6 @@ public class LoginPage {
     private String INPUT_EMAIL = "//input[@id='labeled-input-1']";
     private String INPUT_PASSWORD = "//input[@id='labeled-input-3']";
     private String BTN_SUBMIT_LOGIN = "//button[@type='submit']";
-    public LoginPage loginPage;
 
     public LoginPage(WebKeywords action){
         this.action = action;
