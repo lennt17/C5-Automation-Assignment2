@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 41.747 s <<< FAILURE! - in TestSuite
-Test01_TestAPI(test.DemoTest)  Time elapsed: 26.06 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at test.DemoTest.Test01_TestAPI(DemoTest.java:72)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 65.092 s - in TestSuite
