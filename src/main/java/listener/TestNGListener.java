@@ -4,8 +4,6 @@ import WebKeywords.WebKeywords;
 
 import org.testng.ITestNGListener;
 import org.testng.annotations.*;
-import utils.log.LogHelper;
-import org.slf4j.Logger;
 import utils.configs.ConfigSettings;
 
 import java.io.File;
@@ -15,37 +13,32 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import test.DemoTest;
 
 import io.qameta.allure.Attachment;
 import variable.Token;
-import api.Api;
 
 public class TestNGListener implements ITestNGListener {
     protected WebKeywords action;
-    protected String accessToken;
-
-    private static Logger logger = LogHelper.getLogger();
     private ConfigSettings configSettings;
+    private drivers.DriverManager driverManager;
     public Token token;
-    public Api api;
 
     public TestNGListener() {
         action = new WebKeywords();
-        this.token = new Token(action);
         configSettings = new ConfigSettings(System.getProperty("user.dir"));
+    }
+
+    public WebDriver getDriver() {
+        return driverManager.getDriver();
     }
 
     @Parameters({"browser"})
     @BeforeTest
-    public void beforeTest(String browser) throws InterruptedException {
+    public void beforeTest(String browser){
         deleteFileFromDirectory();
         action.openBrowser(browser, configSettings.getBaseUrl());
         action.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         action.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-
-        accessToken = token.getToken();
-        System.out.println("before Test" + accessToken);
     }
 
     private static String getTestMethodName(ITestResult iTestResult) {
@@ -68,9 +61,7 @@ public class TestNGListener implements ITestNGListener {
     public void onTestFailure(ITestResult iTestResult) {
         System.out.print("I am in onTestFailure method " + getTestMethodName(iTestResult) + "failed");
 
-        // Get driver from DemoTest and assign to local webdriver variable
-        Object testClass = iTestResult.getInstance();
-        WebDriver driver = ((DemoTest) testClass).getDriver();
+        WebDriver driver = getDriver();
 
         // Allure ScreenshotRobot and SaveTestLog
         if (driver instanceof WebDriver) {

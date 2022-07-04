@@ -15,6 +15,8 @@ import static io.restassured.RestAssured.given;
 public class Token {
     public WebKeywords action;
     public String accessToken;
+    private String email = "lennt2k@gmail.com";
+    private String password = "Len181403032";
 
     Gson g = new Gson();
 
@@ -25,8 +27,8 @@ public class Token {
 
     public String getToken(){
         RestAssured.baseURI = "https://todoist.com/API/v8.7/user/login";
-        mapLogin.put("email", "lennt2k@gmail.com");
-        mapLogin.put("password", "Len181403032");
+        mapLogin.put("email", email);
+        mapLogin.put("password", password);
         Response res = given()
                 .contentType(ContentType.JSON)
                 .and()
