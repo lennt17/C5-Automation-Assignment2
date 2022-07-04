@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-04T16:17:11 ICT" name="Suite" finished-at="2022-07-04T16:18:13 ICT" duration-ms="61751">
+  <suite started-at="2022-07-04T17:03:32 ICT" name="Suite" finished-at="2022-07-04T17:04:43 ICT" duration-ms="70562">
     <groups>
     </groups>
-    <test started-at="2022-07-04T16:17:11 ICT" name="Test Case" finished-at="2022-07-04T16:18:13 ICT" duration-ms="61751">
+    <test started-at="2022-07-04T17:03:32 ICT" name="Test Case" finished-at="2022-07-04T17:04:43 ICT" duration-ms="70562">
       <class name="test.DemoTest">
-        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:test.DemoTest@5c080ef3]" started-at="2022-07-04T16:17:11 ICT" name="beforeTest" finished-at="2022-07-04T16:17:21 ICT" duration-ms="10315" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:test.DemoTest@78cd163b]" started-at="2022-07-04T17:03:32 ICT" name="beforeTest" finished-at="2022-07-04T17:03:51 ICT" duration-ms="19369" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="Test01_TestAPI()[pri:0, instance:test.DemoTest@5c080ef3]" started-at="2022-07-04T16:17:21 ICT" name="Test01_TestAPI" description="Create project and task through API and then verify in WebUI" finished-at="2022-07-04T16:18:12 ICT" duration-ms="50442" status="PASS">
+        <test-method signature="Test01_TestAPI()[pri:0, instance:test.DemoTest@78cd163b]" started-at="2022-07-04T17:03:51 ICT" name="Test01_TestAPI" description="Create project and task through API and then verify in WebUI" finished-at="2022-07-04T17:04:41 ICT" duration-ms="50078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test01_TestAPI -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.DemoTest@5c080ef3]" started-at="2022-07-04T16:18:12 ICT" name="afterTest" finished-at="2022-07-04T16:18:13 ICT" duration-ms="763" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.DemoTest@78cd163b]" started-at="2022-07-04T17:04:42 ICT" name="afterTest" finished-at="2022-07-04T17:04:43 ICT" duration-ms="854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

@@ -34,7 +34,7 @@ public class DemoTest extends TestNGListener {
 
     public DemoTest() {
         super();
-        this.token = new Token(action);
+        this.token = new Token();
     }
 
     public WebDriver getDriver() {

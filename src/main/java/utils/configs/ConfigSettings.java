@@ -7,6 +7,8 @@ public class ConfigSettings {
     private static final String BROWSER = "browser";
     private static final String DEFAULT_TIMEOUT = "timeout";
 
+    private static final String EMAIL = "email";
+    private static final String PASSWORD = "password";
     private static final String BASE_URL = "urlBase";
     private static final String BASE_URI = "baseURI";
     private static final String BASE_URI_TOKEN = "baseURIToken";
@@ -40,6 +42,13 @@ public class ConfigSettings {
 
     public String getBaseUrl() {
         return this.configProperties.getProperty(BASE_URL);
+    }
+    public String getEmail(){
+        return this.configProperties.getProperty(EMAIL);
+    }
+
+    public String getPassword(){
+        return this.configProperties.getProperty(PASSWORD);
     }
     public String getBaseURI() {
         return this.configProperties.getProperty(BASE_URI);
