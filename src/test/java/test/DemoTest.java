@@ -8,7 +8,6 @@ import listener.TestNGListener;
 import org.testng.annotations.Test;
 
 import pages.ProjectPage;
-import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.TodayPage;
@@ -29,16 +28,11 @@ public class DemoTest extends TestNGListener {
     private ProjectPage projectPage;
     public ApiProject apiProject;
     public ApiTask apiTask;
-    private drivers.DriverManager DriverManager;
     Gson g = new Gson();
 
     public DemoTest() {
         super();
         this.token = new Token();
-    }
-
-    public WebDriver getDriver() {
-        return DriverManager.getDriver();
     }
 
     @Test(description = "Create project and task through API and then verify in WebUI")
