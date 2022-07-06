@@ -38,7 +38,7 @@ public class TestNGListener implements ITestNGListener {
         deleteFileFromDirectory();
         action.openBrowser(browser, configSettings.getBaseUrl());
         action.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        action.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        action.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(45));
     }
 
     private static String getTestMethodName(ITestResult iTestResult) {
