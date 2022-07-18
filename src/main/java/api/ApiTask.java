@@ -1,7 +1,8 @@
 package api;
 
 import java.util.Map;
-import static constant.Constant.*;
+import static constant.Endpoint.*;
+
 import io.restassured.response.Response;
 
 public class ApiTask extends APIBase {

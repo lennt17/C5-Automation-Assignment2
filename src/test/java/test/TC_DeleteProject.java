@@ -1,18 +1,21 @@
 package test;
 
 import accessToken.Token;
-import api.APIBase;
+
 import api.ApiProject;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import handle.HandleResponse;
 import io.restassured.response.Response;
+import microservices.Projects.steps.Project;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class TC_DeleteProject {
+public class TC_DeleteProject{
     ApiProject apiProject = new ApiProject();
-    APIBase apiBase = new APIBase();
+    Project project = new Project();
+    HandleResponse handleResponse = new HandleResponse();
     Token token = new Token();
 
     @Test(description = "API: Delete all projects - successfully")
@@ -20,14 +23,14 @@ public class TC_DeleteProject {
         String accessToken = token.getToken();
 
         Response re = apiProject.getAllProjects(accessToken);
-        JsonArray arr = apiBase.getJsonArray(re);
+        JsonArray arr = handleResponse.getJsonArray(re);
         for(int i = 0; i < arr.size(); i++){
-            JsonObject objectProject = ((arr.get(i))).getAsJsonObject();
-            Long idProject = objectProject.get("id").getAsLong();
+            JsonObject objProject = (arr.get(i)).getAsJsonObject();
+            Long idProject = project.getIdProject(objProject);
             System.out.println("id: " + idProject);
 
             Response res = apiProject.deleteProject(accessToken, idProject);
-            int statusCode = apiBase.getStatusCode(res);
+            int statusCode = handleResponse.getStatusCode(res);
             assertEquals(statusCode, 204);
         }
     }

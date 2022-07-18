@@ -1,18 +1,17 @@
 package test;
 
 import accessToken.Token;
-import api.APIBase;
 import api.ApiProject;
 import com.google.gson.JsonArray;
+import handle.HandleResponse;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static constant.Constant.*;
 
-public class TC_GetAllProject {
+public class TC_GetAllProject extends HandleResponse {
     ApiProject apiProject = new ApiProject();
-    APIBase apiBase = new APIBase();
     Token token = new Token();
 
     @Test(description = "API: Get all projects - with valid token successfully")
@@ -20,9 +19,9 @@ public class TC_GetAllProject {
         String accessToken = token.getToken();
 
         Response res = apiProject.getAllProjects(accessToken);
-        int statusCode = apiBase.getStatusCode(res);
+        int statusCode = getStatusCode(res);
         System.out.println(statusCode);
-        JsonArray arr = apiBase.getJsonArray(res);
+        JsonArray arr = getJsonArray(res);
         System.out.println(arr);
 
         assertEquals(statusCode, 200);
@@ -34,7 +33,7 @@ public class TC_GetAllProject {
 
         //precondition: non-existing project in account
         Response res = apiProject.getAllProjects(accessToken);
-        int statusCode = apiBase.getStatusCode(res);
+        int statusCode = getStatusCode(res);
         assertEquals(statusCode, 200);
     }
 
@@ -43,7 +42,7 @@ public class TC_GetAllProject {
         String accessToken = "";
 
         Response res = apiProject.getAllProjects(accessToken);
-        int statusCode = apiBase.getStatusCode(res);
+        int statusCode = getStatusCode(res);
         assertEquals(statusCode, 401);
     }
 
@@ -52,7 +51,7 @@ public class TC_GetAllProject {
         String accessToken = "!@#123";
 
         Response res = apiProject.getAllProjects(accessToken);
-        int statusCode = apiBase.getStatusCode(res);
+        int statusCode = getStatusCode(res);
         assertEquals(statusCode, 401);
     }
 
@@ -61,7 +60,7 @@ public class TC_GetAllProject {
         String accessToken = tokenExpired;
 
         Response res = apiProject.getAllProjects(accessToken);
-        int statusCode = apiBase.getStatusCode(res);
+        int statusCode = getStatusCode(res);
         assertEquals(statusCode, 401);
     }
 }

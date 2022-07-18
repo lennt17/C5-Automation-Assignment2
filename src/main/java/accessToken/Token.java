@@ -9,8 +9,8 @@ import io.restassured.response.Response;
 import java.util.HashMap;
 import java.util.Map;
 
+import static constant.Endpoint.*;
 import static io.restassured.RestAssured.given;
-import static constant.Constant.*;
 import api.APIBase;
 
 public class Token extends APIBase {

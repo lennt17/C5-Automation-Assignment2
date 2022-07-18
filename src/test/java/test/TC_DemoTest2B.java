@@ -1,11 +1,12 @@
 package test;
 
-import api.APIBase;
 import api.ApiProject;
 import api.ApiTask;
 import com.google.gson.JsonObject;
+import handle.HandleResponse;
 import io.restassured.response.Response;
 import listener.TestNGListener;
+import microservices.Projects.steps.Project;
 import org.testng.annotations.Test;
 
 import pages.ProjectPage;
@@ -18,7 +19,8 @@ import accessToken.Token;
 import java.util.HashMap;
 import java.util.Map;
 
-import static constant.Constant.*;
+import static microservices.Tasks.models.Task.*;
+import static microservices.Projects.models.Project.*;
 import static org.testng.Assert.assertTrue;
 
 public class TC_DemoTest2B extends TestNGListener {
@@ -29,8 +31,9 @@ public class TC_DemoTest2B extends TestNGListener {
     public TodayPage todayPage;
     public ProjectPage projectPage;
     public ConfigSettings configSettings;
-    APIBase apiBase = new APIBase();
+    HandleResponse handleResponse = new HandleResponse();
     ApiProject apiProject = new ApiProject();
+    Project project = new Project();
     ApiTask apiTask = new ApiTask();
     Token token = new Token();
 
@@ -45,12 +48,12 @@ public class TC_DemoTest2B extends TestNGListener {
 
         // Create project through API
         Map<String, Object> mapPostProject = new HashMap<>();
-        mapPostProject.put("name", nameProject);
+        mapPostProject.put(name, nameProject);
 
         Response res = apiProject.createProject(accessToken, mapPostProject);
 
-        JsonObject objectProjectCreated = apiBase.getJsonObject(res);
-        String idProjectCreate = objectProjectCreated.get("id").getAsString();
+        JsonObject objectProjectCreated = handleResponse.getJsonObject(res);
+        Long idProjectCreate = project.getIdProject(objectProjectCreated);
 
         // Create task through API
         Map<String, Object> mapPostTask = new HashMap<>();
@@ -61,7 +64,7 @@ public class TC_DemoTest2B extends TestNGListener {
         mapPostTask.put(priority, 4);
 
         Response response = apiTask.createTask(accessToken, mapPostTask);
-        JsonObject objectTaskCreated = apiBase.getJsonObject(response);
+        JsonObject objectTaskCreated = handleResponse.getJsonObject(response);
         long idTask = objectTaskCreated.get("id").getAsLong();
 
         // Verify value project and task in Web UI

@@ -2,8 +2,7 @@ package api;
 import io.restassured.response.Response;
 
 import java.util.Map;
-import static constant.Constant.*;
-import static java.lang.Long.parseLong;
+import static constant.Endpoint.*;
 
 public class ApiProject extends APIBase {
     String basePathProject = basePath_project;
@@ -26,7 +25,7 @@ public class ApiProject extends APIBase {
     }
 
     public Response deleteProject(String accessToken, long idProject){
-        String basePathDelete = basePathProject + "/" + idProject;
-        return sendDelete(accessToken, basePathDelete);
+        String basePathDelete = basePathProject;
+        return sendDelete(accessToken, basePathDelete, idProject);
     }
 }
