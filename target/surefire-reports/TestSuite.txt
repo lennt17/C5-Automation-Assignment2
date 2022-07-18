@@ -1,4 +1,48 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 71.785 s - in TestSuite
+Tests run: 33, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 141.451 s <<< FAILURE! - in TestSuite
+Test03_createProjectWithSameBodyTwice(test.TC_CreateProject)  Time elapsed: 1.884 s  <<< FAILURE!
+java.lang.AssertionError: expected [3] but found [4]
+	at test.TC_CreateProject.Test03_createProjectWithSameBodyTwice(TC_CreateProject.java:100)
+
+Test04_createProjectWithInvalidTypeOfName(test.TC_CreateProject)  Time elapsed: 1.865 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [200]
+	at test.TC_CreateProject.Test04_createProjectWithInvalidTypeOfName(TC_CreateProject.java:115)
+
+Test06_createProjectWithInvalidValueOfOptionalFields(test.TC_CreateProject)  Time elapsed: 1.488 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [200]
+	at test.TC_CreateProject.Test06_createProjectWithInvalidValueOfOptionalFields(TC_CreateProject.java:171)
+
+Test07_createProjectWithInvalidTypeOfOptionalFields(test.TC_CreateProject)  Time elapsed: 2.144 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [200]
+	at test.TC_CreateProject.Test07_createProjectWithInvalidTypeOfOptionalFields(TC_CreateProject.java:195)
+
+Test08_createProjectWithUndefineField(test.TC_CreateProject)  Time elapsed: 1.969 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [403]
+	at test.TC_CreateProject.Test08_createProjectWithUndefineField(TC_CreateProject.java:219)
+
+Test10_createProjectWithoutToken(test.TC_CreateProject)  Time elapsed: 0.742 s  <<< FAILURE!
+java.lang.AssertionError: expected [401] but found [403]
+	at test.TC_CreateProject.Test10_createProjectWithoutToken(TC_CreateProject.java:245)
+
+Test04_updateProjectWithFieldUndefine(test.TC_UpdateProject)  Time elapsed: 1.339 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [204]
+	at test.TC_UpdateProject.Test04_updateProjectWithFieldUndefine(TC_UpdateProject.java:55)
+
+Test05_updateProjectWithInvalidTypeOfOptionField(test.TC_UpdateProject)  Time elapsed: 0.989 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [204]
+	at test.TC_UpdateProject.Test05_updateProjectWithInvalidTypeOfOptionField(TC_UpdateProject.java:71)
+
+Test06_updateProjectWithInvalidValueOfOptionalField(test.TC_UpdateProject)  Time elapsed: 2.853 s  <<< FAILURE!
+java.lang.AssertionError: expected [400] but found [204]
+	at test.TC_UpdateProject.Test06_updateProjectWithInvalidValueOfOptionalField(TC_UpdateProject.java:116)
+
+Test07_updateProjectWithoutToken(test.TC_UpdateProject)  Time elapsed: 0.304 s  <<< FAILURE!
+java.lang.AssertionError: expected [401] but found [403]
+	at test.TC_UpdateProject.Test07_updateProjectWithoutToken(TC_UpdateProject.java:129)
+
+Test03_getAllProjectWithoutToken(test.TC_GetAllProject)  Time elapsed: 0.698 s  <<< FAILURE!
+java.lang.AssertionError: expected [401] but found [403]
+	at test.TC_GetAllProject.Test03_getAllProjectWithoutToken(TC_GetAllProject.java:47)
+

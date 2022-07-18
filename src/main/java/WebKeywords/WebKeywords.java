@@ -68,6 +68,7 @@ public class WebKeywords {
             if (rawUrl != null && !rawUrl.isEmpty()) {
                 logger.info(MessageFormat.format("Navigating to url ''{0}''", rawUrl));
                 driver.get(rawUrl);
+                driver.manage().window().maximize();
                 logger.info(MessageFormat.format("Navigated to url ''{0}'' successfully", rawUrl));
             }
         } catch (Exception e) {

@@ -8,8 +8,8 @@ import java.util.List;
 
 public class ProjectPage {
     public WebKeywords action;
-    private String GROUP_DIV_NAME_TASK = "//ul[@class='items']/li//div[@class='markdown_content task_content']";
-    private String GROUP_BTN_CHECKBOX_TASK = "//ul[@class='items']/li//button[@role='checkbox']";
+    public final String GROUP_DIV_NAME_TASK = "//ul[@class='items']/li//div[@class='markdown_content task_content']";
+    public final String GROUP_BTN_CHECKBOX_TASK = "//ul[@class='items']/li//button[@role='checkbox']";
 
     public ProjectPage(WebKeywords action) {
         this.action = action;

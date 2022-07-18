@@ -1,0 +1,12 @@
+{
+  "id": "integer",
+  "order": "integer",
+  "color": "integer",
+  "name": "String",
+  "comment_count": "integer",
+  "share": "Boolean",
+  "favorite": "Boolean",
+  "sync_id": "integer",
+  "url": "String",
+  "require": ["id", "name"]
+}

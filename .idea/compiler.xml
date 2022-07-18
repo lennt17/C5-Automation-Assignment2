@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PracticeAsign2B" />
+        <module name="C5-Automation-Assignment2" />
         <module name="PracticeAssign2B" />
+        <module name="PracticeAsign2B" />
         <module name="C5-Automation-Assignment2B" />
       </profile>
     </annotationProcessing>

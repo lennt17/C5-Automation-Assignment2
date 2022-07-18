@@ -10,11 +10,6 @@ public class ConfigSettings {
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String BASE_URL = "urlBase";
-    private static final String BASE_URI = "baseURI";
-    private static final String BASE_URI_TOKEN = "baseURIToken";
-
-    private static final String BASEPATH_PROJECT = "basePath_project";
-    private static final String BASEPATH_TASK = "basePath_task";
 
     private static final String PROPERTIES_FILE_NAME = "settings";
 
@@ -49,21 +44,6 @@ public class ConfigSettings {
 
     public String getPassword(){
         return this.configProperties.getProperty(PASSWORD);
-    }
-    public String getBaseURI() {
-        return this.configProperties.getProperty(BASE_URI);
-    }
-
-    public String getBaseURIToken(){
-        return this.configProperties.getProperty(BASE_URI_TOKEN);
-    }
-
-    public String getBasePathProject() {
-        return this.configProperties.getProperty(BASEPATH_PROJECT);
-    }
-
-    public String getBasePathTask() {
-        return this.configProperties.getProperty(BASEPATH_TASK);
     }
 
     public Properties getConfigProperties() {

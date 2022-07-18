@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 11 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>D:\C5-VMO-git\C5-Automation-Assignment2B\src\test\java\testSuites.xml</span>
+                    <span>D:\C5-VMO-git\C5-Automation-Assignment2\src\test\java\testSuites.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,71 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">33 methods, 11 failed,   22 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test03_createProjectWithSameBodyTwice">Test03_createProjectWithSameBodyTwice</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAllProject" class="method navigator-link" hash-for-method="Test03_getAllProjectWithoutToken">Test03_getAllProjectWithoutToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test04_createProjectWithInvalidTypeOfName">Test04_createProjectWithInvalidTypeOfName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test04_updateProjectWithFieldUndefine">Test04_updateProjectWithFieldUndefine</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test05_updateProjectWithInvalidTypeOfOptionField">Test05_updateProjectWithInvalidTypeOfOptionField</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test06_createProjectWithInvalidValueOfOptionalFields">Test06_createProjectWithInvalidValueOfOptionalFields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test06_updateProjectWithInvalidValueOfOptionalField">Test06_updateProjectWithInvalidValueOfOptionalField</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test07_createProjectWithInvalidTypeOfOptionalFields">Test07_createProjectWithInvalidTypeOfOptionalFields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test07_updateProjectWithoutToken">Test07_updateProjectWithoutToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test08_createProjectWithUndefineField">Test08_createProjectWithUndefineField</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test10_createProjectWithoutToken">Test10_createProjectWithoutToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +168,112 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="test.DemoTest" class="method navigator-link" hash-for-method="Test01_TestAPI">Test01_TestAPI</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="test.TC_DeleteProject" class="method navigator-link" hash-for-method="TC01_DeleteAllProjects">TC01_DeleteAllProjects</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test01_createProject">Test01_createProject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAProject" class="method navigator-link" hash-for-method="Test01_getAProject">Test01_getAProject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAllProject" class="method navigator-link" hash-for-method="Test01_getAllProject">Test01_getAllProject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test01_updateProject">Test01_updateProject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test02_createProjectWithRequireField">Test02_createProjectWithRequireField</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAProject" class="method navigator-link" hash-for-method="Test02_getAProjectWithoutToken">Test02_getAProjectWithoutToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAllProject" class="method navigator-link" hash-for-method="Test02_getAllProjectWhenNonExistingProject">Test02_getAllProjectWhenNonExistingProject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAProject" class="method navigator-link" hash-for-method="Test03_getAProjectWithNonExistingToken">Test03_getAProjectWithNonExistingToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAProject" class="method navigator-link" hash-for-method="Test04_getAProjectWithExpiredToken">Test04_getAProjectWithExpiredToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAllProject" class="method navigator-link" hash-for-method="Test04_getAllProjectWithNonExistingToken">Test04_getAllProjectWithNonExistingToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test05_createProjectWithoutName">Test05_createProjectWithoutName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAllProject" class="method navigator-link" hash-for-method="Test05_getAllProjectWithExpiredToken">Test05_getAllProjectWithExpiredToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_GetAProject" class="method navigator-link" hash-for-method="Test06_getAProjectWithInvalidValueOfIdProject">Test06_getAProjectWithInvalidValueOfIdProject</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test08_updateProjectWithNonExistingToken">Test08_updateProjectWithNonExistingToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test09_createProjectWithEmptyBody">Test09_createProjectWithEmptyBody</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test09_updateProjectWithExpiredToken">Test09_updateProjectWithExpiredToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test11_createProjectWithNonExistingToken">Test11_createProjectWithNonExistingToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_UpdateProject" class="method navigator-link" hash-for-method="Test11_updateProjectWithEmptyBody">Test11_updateProjectWithEmptyBody</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test12_createProjectWithExpiredToken">Test12_createProjectWithExpiredToken</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_CreateProject" class="method navigator-link" hash-for-method="Test14_createProjectWhenReachedMaximumProjects">Test14_createProjectWhenReachedMaximumProjects</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.TC_DemoTest2B" class="method navigator-link" hash-for-method="Test2B_createProjectAndTaskThenVerifyInUI">Test2B_createProjectAndTaskThenVerifyInUI</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -119,19 +288,833 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">test.DemoTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">test.TC_GetAllProject</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Test01_TestAPI">
-                  </a> <!-- Test01_TestAPI -->
-                  <span class="method-name">Test01_TestAPI</span>
+                  <a name="Test03_getAllProjectWithoutToken">
+                  </a> <!-- Test03_getAllProjectWithoutToken -->
+                  <span class="method-name">Test03_getAllProjectWithoutToken</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [401] but found [403]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_GetAllProject.Test03_getAllProjectWithoutToken(TC_GetAllProject.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
                   <em>
-(Create project and task through API and then verify in WebUI)                  </em>
+(API: Get all projects - without token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.TC_UpdateProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test04_updateProjectWithFieldUndefine">
+                  </a> <!-- Test04_updateProjectWithFieldUndefine -->
+                  <span class="method-name">Test04_updateProjectWithFieldUndefine</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [204]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_UpdateProject.Test04_updateProjectWithFieldUndefine(TC_UpdateProject.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Update project - with field undefine)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test05_updateProjectWithInvalidTypeOfOptionField">
+                  </a> <!-- Test05_updateProjectWithInvalidTypeOfOptionField -->
+                  <span class="method-name">Test05_updateProjectWithInvalidTypeOfOptionField</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [204]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_UpdateProject.Test05_updateProjectWithInvalidTypeOfOptionField(TC_UpdateProject.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Update project - with invalid type of optional field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test06_updateProjectWithInvalidValueOfOptionalField">
+                  </a> <!-- Test06_updateProjectWithInvalidValueOfOptionalField -->
+                  <span class="method-name">Test06_updateProjectWithInvalidValueOfOptionalField</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [204]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_UpdateProject.Test06_updateProjectWithInvalidValueOfOptionalField(TC_UpdateProject.java:116)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Update project - with invalid value of optional field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test07_updateProjectWithoutToken">
+                  </a> <!-- Test07_updateProjectWithoutToken -->
+                  <span class="method-name">Test07_updateProjectWithoutToken</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [401] but found [403]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_UpdateProject.Test07_updateProjectWithoutToken(TC_UpdateProject.java:129)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Update project - without token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.TC_CreateProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test03_createProjectWithSameBodyTwice">
+                  </a> <!-- Test03_createProjectWithSameBodyTwice -->
+                  <span class="method-name">Test03_createProjectWithSameBodyTwice</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [3] but found [4]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_CreateProject.Test03_createProjectWithSameBodyTwice(TC_CreateProject.java:100)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Create project - send request with the same body twice)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test04_createProjectWithInvalidTypeOfName">
+                  </a> <!-- Test04_createProjectWithInvalidTypeOfName -->
+                  <span class="method-name">Test04_createProjectWithInvalidTypeOfName</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [200]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_CreateProject.Test04_createProjectWithInvalidTypeOfName(TC_CreateProject.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Create project - invalid of type field name)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test06_createProjectWithInvalidValueOfOptionalFields">
+                  </a> <!-- Test06_createProjectWithInvalidValueOfOptionalFields -->
+                  <span class="method-name">Test06_createProjectWithInvalidValueOfOptionalFields</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [200]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_CreateProject.Test06_createProjectWithInvalidValueOfOptionalFields(TC_CreateProject.java:171)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Create project - invalid value of optional field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test07_createProjectWithInvalidTypeOfOptionalFields">
+                  </a> <!-- Test07_createProjectWithInvalidTypeOfOptionalFields -->
+                  <span class="method-name">Test07_createProjectWithInvalidTypeOfOptionalFields</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [200]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_CreateProject.Test07_createProjectWithInvalidTypeOfOptionalFields(TC_CreateProject.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Create project - invalid type of optional field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test08_createProjectWithUndefineField">
+                  </a> <!-- Test08_createProjectWithUndefineField -->
+                  <span class="method-name">Test08_createProjectWithUndefineField</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [400] but found [403]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_CreateProject.Test08_createProjectWithUndefineField(TC_CreateProject.java:219)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Create project - undefine field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test10_createProjectWithoutToken">
+                  </a> <!-- Test10_createProjectWithoutToken -->
+                  <span class="method-name">Test10_createProjectWithoutToken</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [401] but found [403]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1240)
+	at org.testng.Assert.assertEquals(Assert.java:1274)
+	at test.TC_CreateProject.Test10_createProjectWithoutToken(TC_CreateProject.java:245)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+
+</div> <!-- stack-trace -->
+                  <em>
+(API: Create project - without token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TC_GetAllProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test01_getAllProject">
+                  </a> <!-- Test01_getAllProject -->
+                  <span class="method-name">Test01_getAllProject</span>
+                  <em>
+(API: Get all projects - with valid token successfully)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test02_getAllProjectWhenNonExistingProject">
+                  </a> <!-- Test02_getAllProjectWhenNonExistingProject -->
+                  <span class="method-name">Test02_getAllProjectWhenNonExistingProject</span>
+                  <em>
+(API: Get all projects - when non-existing project in account)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test04_getAllProjectWithNonExistingToken">
+                  </a> <!-- Test04_getAllProjectWithNonExistingToken -->
+                  <span class="method-name">Test04_getAllProjectWithNonExistingToken</span>
+                  <em>
+(API: Get all projects - with non-existing token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test05_getAllProjectWithExpiredToken">
+                  </a> <!-- Test05_getAllProjectWithExpiredToken -->
+                  <span class="method-name">Test05_getAllProjectWithExpiredToken</span>
+                  <em>
+(API: Get all projects - with expired token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TC_GetAProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test01_getAProject">
+                  </a> <!-- Test01_getAProject -->
+                  <span class="method-name">Test01_getAProject</span>
+                  <em>
+(API: Get a project - successfully)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test02_getAProjectWithoutToken">
+                  </a> <!-- Test02_getAProjectWithoutToken -->
+                  <span class="method-name">Test02_getAProjectWithoutToken</span>
+                  <em>
+(API: Get a project - without token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test03_getAProjectWithNonExistingToken">
+                  </a> <!-- Test03_getAProjectWithNonExistingToken -->
+                  <span class="method-name">Test03_getAProjectWithNonExistingToken</span>
+                  <em>
+(API: Get a project - with non-existing token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test04_getAProjectWithExpiredToken">
+                  </a> <!-- Test04_getAProjectWithExpiredToken -->
+                  <span class="method-name">Test04_getAProjectWithExpiredToken</span>
+                  <em>
+(API: Get a project - with expired token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test06_getAProjectWithInvalidValueOfIdProject">
+                  </a> <!-- Test06_getAProjectWithInvalidValueOfIdProject -->
+                  <span class="method-name">Test06_getAProjectWithInvalidValueOfIdProject</span>
+                  <em>
+(API: Get a project - with invalid value of id project)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TC_UpdateProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test01_updateProject">
+                  </a> <!-- Test01_updateProject -->
+                  <span class="method-name">Test01_updateProject</span>
+                  <em>
+(API: Update project - successfully with valid token and valid optional field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test08_updateProjectWithNonExistingToken">
+                  </a> <!-- Test08_updateProjectWithNonExistingToken -->
+                  <span class="method-name">Test08_updateProjectWithNonExistingToken</span>
+                  <em>
+(API: Update project - with non-existing token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test09_updateProjectWithExpiredToken">
+                  </a> <!-- Test09_updateProjectWithExpiredToken -->
+                  <span class="method-name">Test09_updateProjectWithExpiredToken</span>
+                  <em>
+(API: Update project - with expired token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test11_updateProjectWithEmptyBody">
+                  </a> <!-- Test11_updateProjectWithEmptyBody -->
+                  <span class="method-name">Test11_updateProjectWithEmptyBody</span>
+                  <em>
+(API: Update project - with empty body)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TC_DemoTest2B</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test2B_createProjectAndTaskThenVerifyInUI">
+                  </a> <!-- Test2B_createProjectAndTaskThenVerifyInUI -->
+                  <span class="method-name">Test2B_createProjectAndTaskThenVerifyInUI</span>
+                  <em>
+(API & UI: Create project and task through API and then verify in WebUI)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TC_DeleteProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC01_DeleteAllProjects">
+                  </a> <!-- TC01_DeleteAllProjects -->
+                  <span class="method-name">TC01_DeleteAllProjects</span>
+                  <em>
+(API: Delete all projects - successfully)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TC_CreateProject</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test01_createProject">
+                  </a> <!-- Test01_createProject -->
+                  <span class="method-name">Test01_createProject</span>
+                  <em>
+(API: Create project - Create successfully with valid token and valid all fields)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test02_createProjectWithRequireField">
+                  </a> <!-- Test02_createProjectWithRequireField -->
+                  <span class="method-name">Test02_createProjectWithRequireField</span>
+                  <em>
+(API: Create project - valid token and only require field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test05_createProjectWithoutName">
+                  </a> <!-- Test05_createProjectWithoutName -->
+                  <span class="method-name">Test05_createProjectWithoutName</span>
+                  <em>
+(API: Create project - without name)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test09_createProjectWithEmptyBody">
+                  </a> <!-- Test09_createProjectWithEmptyBody -->
+                  <span class="method-name">Test09_createProjectWithEmptyBody</span>
+                  <em>
+(API: Create project - empty body)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test11_createProjectWithNonExistingToken">
+                  </a> <!-- Test11_createProjectWithNonExistingToken -->
+                  <span class="method-name">Test11_createProjectWithNonExistingToken</span>
+                  <em>
+(API: Create project - non-existing token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test12_createProjectWithExpiredToken">
+                  </a> <!-- Test12_createProjectWithExpiredToken -->
+                  <span class="method-name">Test12_createProjectWithExpiredToken</span>
+                  <em>
+(API: Create project - expired token)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Test14_createProjectWhenReachedMaximumProjects">
+                  </a> <!-- Test14_createProjectWhenReachedMaximumProjects -->
+                  <span class="method-name">Test14_createProjectWhenReachedMaximumProjects</span>
+                  <em>
+(API: Create project - when reached maximum projects)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -139,7 +1122,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\C5-VMO-git\C5-Automation-Assignment2B\src\test\java\testSuites.xml</span>
+            <span class="header-content">D:\C5-VMO-git\C5-Automation-Assignment2\src\test\java\testSuites.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -149,7 +1132,12 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;Test Case&quot; verbose=&quot;2&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;test.DemoTest&quot;/&gt;
+      &lt;class name=&quot;test.TC_CreateProject&quot;/&gt;
+      &lt;class name=&quot;test.TC_GetAProject&quot;/&gt;
+      &lt;class name=&quot;test.TC_UpdateProject&quot;/&gt;
+      &lt;class name=&quot;test.TC_GetAllProject&quot;/&gt;
+      &lt;class name=&quot;test.TC_DeleteProject&quot;/&gt;
+      &lt;class name=&quot;test.TC_DemoTest2B&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test Case --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -163,7 +1151,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test Case (1 class)</span>
+                <span class="test-name">Test Case (6 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -189,16 +1177,144 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(33);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Test01_TestAPI')
-data.setCell(0, 2, 'test.DemoTest')
-data.setCell(0, 3, 52568);
+data.setCell(0, 1, 'Test2B_createProjectAndTaskThenVerifyInUI')
+data.setCell(0, 2, 'test.TC_DemoTest2B')
+data.setCell(0, 3, 69205);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Test01_createProject')
+data.setCell(1, 2, 'test.TC_CreateProject')
+data.setCell(1, 3, 7105);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TC01_DeleteAllProjects')
+data.setCell(2, 2, 'test.TC_DeleteProject')
+data.setCell(2, 3, 6266);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'Test06_updateProjectWithInvalidValueOfOptionalField')
+data.setCell(3, 2, 'test.TC_UpdateProject')
+data.setCell(3, 3, 2852);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'Test14_createProjectWhenReachedMaximumProjects')
+data.setCell(4, 2, 'test.TC_CreateProject')
+data.setCell(4, 3, 2775);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'Test05_createProjectWithoutName')
+data.setCell(5, 2, 'test.TC_CreateProject')
+data.setCell(5, 3, 2337);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'Test07_createProjectWithInvalidTypeOfOptionalFields')
+data.setCell(6, 2, 'test.TC_CreateProject')
+data.setCell(6, 3, 2139);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'Test09_createProjectWithEmptyBody')
+data.setCell(7, 2, 'test.TC_CreateProject')
+data.setCell(7, 3, 2104);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'Test01_updateProject')
+data.setCell(8, 2, 'test.TC_UpdateProject')
+data.setCell(8, 3, 2079);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'Test08_createProjectWithUndefineField')
+data.setCell(9, 2, 'test.TC_CreateProject')
+data.setCell(9, 3, 1966);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'Test01_getAProject')
+data.setCell(10, 2, 'test.TC_GetAProject')
+data.setCell(10, 3, 1885);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'Test03_createProjectWithSameBodyTwice')
+data.setCell(11, 2, 'test.TC_CreateProject')
+data.setCell(11, 3, 1868);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'Test04_createProjectWithInvalidTypeOfName')
+data.setCell(12, 2, 'test.TC_CreateProject')
+data.setCell(12, 3, 1862);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'Test02_getAllProjectWhenNonExistingProject')
+data.setCell(13, 2, 'test.TC_GetAllProject')
+data.setCell(13, 3, 1688);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'Test06_getAProjectWithInvalidValueOfIdProject')
+data.setCell(14, 2, 'test.TC_GetAProject')
+data.setCell(14, 3, 1658);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'Test01_getAllProject')
+data.setCell(15, 2, 'test.TC_GetAllProject')
+data.setCell(15, 3, 1643);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'Test02_createProjectWithRequireField')
+data.setCell(16, 2, 'test.TC_CreateProject')
+data.setCell(16, 3, 1595);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'Test11_updateProjectWithEmptyBody')
+data.setCell(17, 2, 'test.TC_UpdateProject')
+data.setCell(17, 3, 1590);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'Test06_createProjectWithInvalidValueOfOptionalFields')
+data.setCell(18, 2, 'test.TC_CreateProject')
+data.setCell(18, 3, 1486);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'Test04_updateProjectWithFieldUndefine')
+data.setCell(19, 2, 'test.TC_UpdateProject')
+data.setCell(19, 3, 1336);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'Test12_createProjectWithExpiredToken')
+data.setCell(20, 2, 'test.TC_CreateProject')
+data.setCell(20, 3, 1044);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'Test05_updateProjectWithInvalidTypeOfOptionField')
+data.setCell(21, 2, 'test.TC_UpdateProject')
+data.setCell(21, 3, 985);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'Test11_createProjectWithNonExistingToken')
+data.setCell(22, 2, 'test.TC_CreateProject')
+data.setCell(22, 3, 768);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'Test05_getAllProjectWithExpiredToken')
+data.setCell(23, 2, 'test.TC_GetAllProject')
+data.setCell(23, 3, 744);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'Test04_getAProjectWithExpiredToken')
+data.setCell(24, 2, 'test.TC_GetAProject')
+data.setCell(24, 3, 741);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'Test10_createProjectWithoutToken')
+data.setCell(25, 2, 'test.TC_CreateProject')
+data.setCell(25, 3, 740);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'Test02_getAProjectWithoutToken')
+data.setCell(26, 2, 'test.TC_GetAProject')
+data.setCell(26, 3, 733);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'Test08_updateProjectWithNonExistingToken')
+data.setCell(27, 2, 'test.TC_UpdateProject')
+data.setCell(27, 3, 713);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'Test09_updateProjectWithExpiredToken')
+data.setCell(28, 2, 'test.TC_UpdateProject')
+data.setCell(28, 3, 701);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'Test03_getAllProjectWithoutToken')
+data.setCell(29, 2, 'test.TC_GetAllProject')
+data.setCell(29, 3, 696);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'Test04_getAllProjectWithNonExistingToken')
+data.setCell(30, 2, 'test.TC_GetAllProject')
+data.setCell(30, 3, 695);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'Test03_getAProjectWithNonExistingToken')
+data.setCell(31, 2, 'test.TC_GetAProject')
+data.setCell(31, 3, 382);
+data.setCell(32, 0, 32)
+data.setCell(32, 1, 'Test07_updateProjectWithoutToken')
+data.setCell(32, 2, 'test.TC_UpdateProject')
+data.setCell(32, 3, 301);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 52 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -224,18 +1340,186 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.DemoTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.TC_DemoTest2B</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TC_CreateProject</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">Test01_TestAPI</span>
-                <span class="method-start">12252 ms</span>
+                <span class="method-name">Test01_createProject</span>
+                <span class="method-start">11847 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test02_createProjectWithRequireField</span>
+                <span class="method-start">19197 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test03_createProjectWithSameBodyTwice</span>
+                <span class="method-start">20796 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test04_createProjectWithInvalidTypeOfName</span>
+                <span class="method-start">22680 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test05_createProjectWithoutName</span>
+                <span class="method-start">24545 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test06_createProjectWithInvalidValueOfOptionalFields</span>
+                <span class="method-start">26884 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test07_createProjectWithInvalidTypeOfOptionalFields</span>
+                <span class="method-start">28374 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test08_createProjectWithUndefineField</span>
+                <span class="method-start">30518 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test09_createProjectWithEmptyBody</span>
+                <span class="method-start">32488 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test10_createProjectWithoutToken</span>
+                <span class="method-start">34594 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test11_createProjectWithNonExistingToken</span>
+                <span class="method-start">35337 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test12_createProjectWithExpiredToken</span>
+                <span class="method-start">36108 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test14_createProjectWhenReachedMaximumProjects</span>
+                <span class="method-start">37154 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TC_GetAProject</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Test01_getAProject</span>
+                <span class="method-start">39932 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test02_getAProjectWithoutToken</span>
+                <span class="method-start">41820 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test03_getAProjectWithNonExistingToken</span>
+                <span class="method-start">42555 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test04_getAProjectWithExpiredToken</span>
+                <span class="method-start">42945 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test06_getAProjectWithInvalidValueOfIdProject</span>
+                <span class="method-start">43688 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TC_UpdateProject</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Test01_updateProject</span>
+                <span class="method-start">45355 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test04_updateProjectWithFieldUndefine</span>
+                <span class="method-start">47438 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test05_updateProjectWithInvalidTypeOfOptionField</span>
+                <span class="method-start">48777 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test06_updateProjectWithInvalidValueOfOptionalField</span>
+                <span class="method-start">49766 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test07_updateProjectWithoutToken</span>
+                <span class="method-start">52620 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test08_updateProjectWithNonExistingToken</span>
+                <span class="method-start">52925 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test09_updateProjectWithExpiredToken</span>
+                <span class="method-start">53640 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test11_updateProjectWithEmptyBody</span>
+                <span class="method-start">54343 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TC_GetAllProject</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Test01_getAllProject</span>
+                <span class="method-start">55944 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test02_getAllProjectWhenNonExistingProject</span>
+                <span class="method-start">57591 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Test03_getAllProjectWithoutToken</span>
+                <span class="method-start">59294 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test04_getAllProjectWithNonExistingToken</span>
+                <span class="method-start">59993 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Test05_getAllProjectWithExpiredToken</span>
+                <span class="method-start">60691 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TC_DeleteProject</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">TC01_DeleteAllProjects</span>
+                <span class="method-start">61448 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TC_DemoTest2B</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Test2B_createProjectAndTaskThenVerifyInUI</span>
+                <span class="method-start">67718 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">65071 ms</span>
+                <span class="method-start">136935 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -4,13 +4,29 @@
   <test thread-count="5" name="Test Case(failed)" verbose="0">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="test.DemoTest">
+      <class name="test.TC_GetAllProject">
         <methods>
-          <include name="Test01_TestAPI"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="Test03_getAllProjectWithoutToken"/>
         </methods>
-      </class> <!-- test.DemoTest -->
+      </class> <!-- test.TC_GetAllProject -->
+      <class name="test.TC_UpdateProject">
+        <methods>
+          <include name="Test06_updateProjectWithInvalidValueOfOptionalField"/>
+          <include name="Test04_updateProjectWithFieldUndefine"/>
+          <include name="Test07_updateProjectWithoutToken"/>
+          <include name="Test05_updateProjectWithInvalidTypeOfOptionField"/>
+        </methods>
+      </class> <!-- test.TC_UpdateProject -->
+      <class name="test.TC_CreateProject">
+        <methods>
+          <include name="Test08_createProjectWithUndefineField"/>
+          <include name="Test10_createProjectWithoutToken"/>
+          <include name="Test06_createProjectWithInvalidValueOfOptionalFields"/>
+          <include name="Test03_createProjectWithSameBodyTwice"/>
+          <include name="Test04_createProjectWithInvalidTypeOfName"/>
+          <include name="Test07_createProjectWithInvalidTypeOfOptionalFields"/>
+        </methods>
+      </class> <!-- test.TC_CreateProject -->
     </classes>
   </test> <!-- Test Case(failed) -->
 </suite> <!-- Failed suite [Suite] -->

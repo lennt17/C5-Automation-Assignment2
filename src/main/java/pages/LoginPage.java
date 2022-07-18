@@ -5,9 +5,9 @@ import io.qameta.allure.Step;
 
 public class LoginPage {
     public WebKeywords action;
-    private String INPUT_EMAIL = "//input[@id='labeled-input-1']";
-    private String INPUT_PASSWORD = "//input[@id='labeled-input-3']";
-    private String BTN_SUBMIT_LOGIN = "//button[@type='submit']";
+    public final String INPUT_EMAIL = "//input[@id='labeled-input-1']";
+    public final String INPUT_PASSWORD = "//input[@id='labeled-input-3']";
+    public final String BTN_SUBMIT_LOGIN = "//button[@type='submit']";
 
     public LoginPage(WebKeywords action){
         this.action = action;
@@ -26,9 +26,8 @@ public class LoginPage {
     }
 
     @Step("CLick button login")
-    public TodayPage clickBtnLogin(){
+    public void clickBtnLogin(){
         action.click(BTN_SUBMIT_LOGIN);
-        return new TodayPage(action);
     }
 
     @Step("Login with account")

@@ -4,7 +4,12 @@
     <test name="Test Case" preserve-order="true" verbose="2">
         <parameter name="browser" value="Chrome" />
         <classes>
-            <class name="test.DemoTest"></class>
+            <class name="test.TC_CreateProject"/>
+            <class name="test.TC_GetAProject"/>
+            <class name="test.TC_UpdateProject"/>
+            <class name="test.TC_GetAllProject"/>
+            <class name="test.TC_DeleteProject"/>
+            <class name="test.TC_DemoTest2B"/>
         </classes>
     </test>
 </suite>

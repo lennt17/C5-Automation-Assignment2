@@ -1,32 +1,32 @@
 package api;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import utils.configs.ConfigSettings;
+import io.restassured.response.Response;
 
 import java.util.Map;
-
-import static io.restassured.RestAssured.*;
+import static constant.Constant.*;
+import static java.lang.Long.parseLong;
 
 public class ApiProject extends APIBase {
-    public ConfigSettings configSettings;
-    public APIBase apiBase;
-    public JsonObject ObjectCreated;
-    public JsonObject ObjectGot;
+    String basePathProject = basePath_project;
 
-    Gson g = new Gson();
-    public ApiProject(){
-        configSettings = new ConfigSettings(System.getProperty("user.dir"));
+    public Response createProject(String accessToken, Map mapPost){
+        return sendPost(accessToken, basePathProject, mapPost);
     }
 
-    public JsonObject create(String accessToken, Map mapPost){
-        apiBase = new APIBase();
-        basePath = configSettings.getBasePathProject();
-        return ObjectCreated = apiBase.sendPost(accessToken, basePath, mapPost);
+    public Response getAProject(String accessToken, long idProjectGet){
+        return sendGet(accessToken, basePathProject, idProjectGet);
     }
 
-    public JsonObject get(String accessToken, String idProjectGet){
-        basePath = configSettings.getBasePathProject();
-        return ObjectGot = apiBase.sendGet(accessToken, basePath, idProjectGet);
+    public Response getAllProjects(String accessToken){
+        return sendGet(accessToken, basePathProject);
+    }
+
+    public Response updateProject(String accessToken, long idProject, Map mapUpdate){
+        String basePathUpdate = basePathProject + "/" + idProject;
+        return sendPost(accessToken, basePathUpdate ,mapUpdate);
+    }
+
+    public Response deleteProject(String accessToken, long idProject){
+        String basePathDelete = basePathProject + "/" + idProject;
+        return sendDelete(accessToken, basePathDelete);
     }
 }
