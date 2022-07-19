@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import handle.HandleResponse;
 import handle.Handles;
 import io.restassured.response.Response;
+import jdk.jfr.Description;
 import listener.TestNGListener;
 import microservices.Projects.steps.Project;
 import microservices.Tasks.steps.Tasks;
@@ -46,7 +47,8 @@ public class TC_DemoTest2B extends TestNGListener {
         configSettings = new ConfigSettings(System.getProperty("user.dir"));
     }
 
-    @Test(description = "API & UI: Create project and task through API and then verify in WebUI")
+    @Test(description = "API & UI: Create project and create/reopen task")
+    @Description("200 - Create project and task through API and then verify in WebUI. Close task in WebUI, then reopen through API and verify task is reopen in WebUI")
     public void Test2B_createProjectAndTaskThenVerifyInUI() {
         String accessToken = token.getToken();
         handles.deleteAllProjects();

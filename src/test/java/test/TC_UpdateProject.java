@@ -5,6 +5,7 @@ import api.ApiProject;
 import com.google.gson.JsonObject;
 import handle.HandleResponse;
 import io.restassured.response.Response;
+import jdk.jfr.Description;
 import microservices.Projects.steps.Project;
 import org.testng.annotations.Test;
 
@@ -23,7 +24,8 @@ public class TC_UpdateProject {
     Token token = new Token();
 
     // Test api update project
-    @Test(description = "API: Update project - successfully with valid token and valid optional field")
+    @Test(description = "API: Update project successfully")
+    @Description("204 - Update project successfully with valid token and optional fields")
     public void Test01_updateProject() {
         String accessToken = token.getToken();
 
@@ -42,7 +44,8 @@ public class TC_UpdateProject {
         assertEquals(nameProjectUpdated, nameProjectUpdate);
     }
 
-    @Test(description = "API: Update project - send request with same body")
+    @Test(description = "API: Update project send request with same body")
+    @Description("400 - Update project send request with same body")
     public void Test02_updateProjectWithSameBody() {
         String accessToken = token.getToken();
         long idProjectGet = idProjectCreated;
@@ -64,7 +67,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode2, 400);
     }
 
-    @Test(description = "API: Update project - with field undefine")
+    @Test(description = "API: Update project with field undefine")
+    @Description("400 - Update project with field undefine")
     public void Test03_updateProjectWithFieldUndefine() {
         String accessToken = token.getToken();
 
@@ -80,7 +84,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode, 400);
     }
 
-    @Test(description = "API: Update project - with invalid type of optional field")
+    @Test(description = "API: Update project with invalid type of optional field")
+    @Description("400 - Update project with invalid type of optional field")
     public void Test04_updateProjectWithInvalidTypeOfOptionField() {
         String accessToken = token.getToken();
 
@@ -114,7 +119,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode3, 400);
     }
 
-    @Test(description = "API: Update project - with invalid value of optional field")
+    @Test(description = "API: Update project with invalid value of optional field")
+    @Description("400 - Update project with invalid value of optional field")
     public void Test05_updateProjectWithInvalidValueOfOptionalField() {
         String accessToken = token.getToken();
         long idProjectUpdate = idProjectCreated;
@@ -141,7 +147,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode3, 400);
     }
 
-    @Test(description = "API: Update project - without token")
+    @Test(description = "API: Update project without token")
+    @Description("401 - Update project without token")
     public void Test06_updateProjectWithoutToken() {
         String accessToken = "";
         long idProjectUpdate = idProjectCreated;
@@ -154,7 +161,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Update project - with non-existing token")
+    @Test(description = "API: Update project with non-existing token")
+    @Description("401 - Update project with non-existing token")
     public void Test07_updateProjectWithNonExistingToken() {
         String accessToken = "!@#123";
         long idProjectUpdate = idProjectCreated;
@@ -167,7 +175,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Update project - with expired token")
+    @Test(description = "API: Update project with expired token")
+    @Description("401 - Update project with expired token")
     public void Test08_updateProjectWithExpiredToken() {
         String accessToken = tokenExpired;
         long idProjectUpdate = idProjectCreated;
@@ -181,6 +190,7 @@ public class TC_UpdateProject {
     }
 
     @Test(description = "Update project with different method")
+    @Description("400 - Update project with different method")
     public void Test9_updateProjectWithDifferentMethod() {
         String accessToken = token.getToken();
         long idProjectUpdate = idProjectCreated;
@@ -192,7 +202,8 @@ public class TC_UpdateProject {
         assertEquals(statusCode, 400);
     }
 
-    @Test(description = "API: Update project - with empty body")
+    @Test(description = "API: Update project with empty body")
+    @Description("400 - Update project with empty body")
     public void Test10_updateProjectWithEmptyBody() {
         String accessToken = token.getToken();
         long idProjectUpdate = idProjectCreated;

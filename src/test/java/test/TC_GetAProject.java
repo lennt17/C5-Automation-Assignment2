@@ -5,6 +5,7 @@ import api.ApiProject;
 import com.google.gson.JsonObject;
 import handle.HandleResponse;
 import io.restassured.response.Response;
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -20,7 +21,8 @@ public class TC_GetAProject {
     HandleResponse handleResponse = new HandleResponse();
     Token token = new Token();
 
-    @Test(description = "API: Get a project - successfully")
+    @Test(description = "API: Get a project successfully")
+    @Description("200 - Get a project successfully with valid token")
     public void Test01_getAProject() {
         String accessToken = token.getToken();
 
@@ -36,7 +38,8 @@ public class TC_GetAProject {
         assertEquals(statusCode, 200);
     }
 
-    @Test(description = "API: Get a project - without token")
+    @Test(description = "API: Get a project without token")
+    @Description("403 - Get a project without token")
     public void Test02_getAProjectWithoutToken() {
         String accessToken = "";
         long idProjectGet = idProjectCreated;
@@ -46,7 +49,8 @@ public class TC_GetAProject {
         assertEquals(statusCode, 403);
     }
 
-    @Test(description = "API: Get a project - with non-existing token")
+    @Test(description = "API: Get a project with non-existing token")
+    @Description("401 - Get a project with non-existing token")
     public void Test03_getAProjectWithNonExistingToken() {
         String accessToken = "!@#123";
         long idProjectGet = idProjectCreated;
@@ -56,7 +60,8 @@ public class TC_GetAProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Get a project - with expired token")
+    @Test(description = "API: Get a project with expired token")
+    @Description("401 - Get a project with expired token")
     public void Test04_getAProjectWithExpiredToken() {
         String accessToken = tokenExpired;
         long idProjectGet = idProjectCreated;
@@ -66,7 +71,8 @@ public class TC_GetAProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Get a project - with different method")
+    @Test(description = "API: Get a project with different method")
+    @Description("400 - Get a project with different method")
     public void Test05_getAProjectWithDifferentMethod() {
         String accessToken = token.getToken();
         long idProjectGet = idProjectCreated;
@@ -79,7 +85,8 @@ public class TC_GetAProject {
         assertEquals(statusCode, 400);
     }
 
-    @Test(description = "API: Get a project - with invalid value of id project")
+    @Test(description = "API: Get a project with invalid value of id project")
+    @Description("404 - Get a project with invalid value of id project")
     public void Test06_getAProjectWithInvalidValueOfIdProject() {
         String accessToken = token.getToken();
         long idProjectGet = idProjectInvalid;

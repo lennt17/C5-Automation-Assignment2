@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import handle.*;
 import io.restassured.response.Response;
+import jdk.jfr.Description;
 import microservices.Projects.steps.Project;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,8 @@ public class TC_CreateProject {
     Project project = new Project();
     public static long idProjectCreated;
 
-    @Test(description = "API: Create project - Create successfully with valid token and valid all fields")
+    @Test(description = "API: Create project successfully")
+    @Description("200 - Create project successfully with valid token and valid all fields")
     public void Test01_createProject() {
         String accessToken = token.getToken();
         handles.deleteAllProjects();
@@ -59,7 +61,8 @@ public class TC_CreateProject {
         assertTrue(urlProjectCreated.contains(str_idProjectCreated));
     }
 
-    @Test(description = "API: Create project - valid token and only require field")
+    @Test(description = "API: Create project with valid token and only require field")
+    @Description("200 - Create project successfully with valid token and only require field")
     public void Test02_createProjectWithRequireField() {
         String accessToken = token.getToken();
 
@@ -80,7 +83,8 @@ public class TC_CreateProject {
         assertTrue(urlProjectCreated.contains(str_idProjectCreated));
     }
 
-    @Test(description = "API: Create project - send request with the same body twice")
+    @Test(description = "API: Create project with send request the same body twice")
+    @Description("200 - Create project with send request the same body twice")
     public void Test03_createProjectWithSameBodyTwice() {
         String accessToken = token.getToken();
         handles.deleteAllProjects();
@@ -122,7 +126,8 @@ public class TC_CreateProject {
         assertTrue(urlProjectCreated2.contains(str_idProjectCreated2));
     }
 
-    @Test(description = "API: Create project - invalid of type field name")
+    @Test(description = "API: Create project with invalid type of field name")
+    @Description("400 - Create project with invalid type of field name")
     public void Test04_createProjectWithInvalidTypeOfName() {
         String accessToken = token.getToken();
 
@@ -145,7 +150,8 @@ public class TC_CreateProject {
         assertEquals(statusCode2, 400);
     }
 
-    @Test(description = "API: Create project - without name")
+    @Test(description = "API: Create project without name")
+    @Description("400 - Create project without name")
     public void Test05_createProjectWithoutName() {
         String accessToken = token.getToken();
 
@@ -178,7 +184,8 @@ public class TC_CreateProject {
         assertEquals(statusCode3, 400);
     }
 
-    @Test(description = "API: Create project - invalid value of optional field")
+    @Test(description = "API: Create project with invalid value of optional field")
+    @Description("400 - Create project with invalid value of optional field")
     public void Test06_createProjectWithInvalidValueOfOptionalFields() {
         String accessToken = token.getToken();
 
@@ -201,7 +208,8 @@ public class TC_CreateProject {
         assertEquals(statusCode2, 400);
     }
 
-    @Test(description = "API: Create project - invalid type of optional field")
+    @Test(description = "API: Create project with invalid type of optional field")
+    @Description("400 - Create project with invalid type of optional field")
     public void Test07_createProjectWithInvalidTypeOfOptionalFields() {
         String accessToken = token.getToken();
 
@@ -226,7 +234,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 400);
     }
 
-    @Test(description = "API: Create project - undefine field")
+    @Test(description = "API: Create project with undefine field")
+    @Description("400 - Create project with undefine field")
     public void Test08_createProjectWithUndefineField() {
         String accessToken = token.getToken();
 
@@ -240,7 +249,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 400);
     }
 
-    @Test(description = "API: Create project - empty body")
+    @Test(description = "API: Create project with empty body")
+    @Description("400 - Create project with empty body")
     public void Test09_createProjectWithEmptyBody() {
         String accessToken = token.getToken();
 
@@ -252,7 +262,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 400);
     }
 
-    @Test(description = "API: Create project - without token")
+    @Test(description = "API: Create project without token")
+    @Description("401 - Create project without token")
     public void Test10_createProjectWithoutToken() {
         String accessToken = "";
 
@@ -266,7 +277,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Create project - non-existing token")
+    @Test(description = "API: Create project with non-existing token")
+    @Description("401 - Create project with non-existing token")
     public void Test11_createProjectWithNonExistingToken() {
         String accessToken = "!@#";
 
@@ -280,7 +292,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Create project - expired token")
+    @Test(description = "API: Create project with expired token")
+    @Description("401 - Create project with expired token")
     public void Test12_createProjectWithExpiredToken() {
         String accessToken = tokenExpired;
 
@@ -292,7 +305,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Create project - different method")
+    @Test(description = "API: Create project with different method")
+    @Description("405 - Create project with different method")
     public void Test13_createProjectWithDifferentMethod() {
         String accessToken = token.getToken();
 
@@ -301,7 +315,8 @@ public class TC_CreateProject {
         assertEquals(statusCode, 405);
     }
 
-    @Test(description = "API: Create project - when reached maximum projects")
+    @Test(description = "API: Create project when reached maximum projects")
+    @Description("403 - Create project when reached maximum projects")
     public void Test14_createProjectWhenReachedMaximumProjects() {
         String accessToken = token.getToken();
 

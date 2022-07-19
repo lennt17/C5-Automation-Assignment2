@@ -7,6 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import handle.HandleResponse;
 import io.restassured.response.Response;
+import jdk.jfr.Description;
 import microservices.Projects.steps.Project;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,8 @@ public class TC_DeleteProject {
     HandleResponse handleResponse = new HandleResponse();
     Token token = new Token();
 
-    @Test(description = "API: Delete all projects - successfully")
+    @Test(description = "API: Delete all projects successfully")
+    @Description("204 - Delete all projects successfully with valid token")
     public void TC01_DeleteAllProjects() {
         String accessToken = token.getToken();
 
