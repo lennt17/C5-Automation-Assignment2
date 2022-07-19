@@ -38,11 +38,12 @@ public class ConfigSettings {
     public String getBaseUrl() {
         return this.configProperties.getProperty(BASE_URL);
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return this.configProperties.getProperty(EMAIL);
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return this.configProperties.getProperty(PASSWORD);
     }
 

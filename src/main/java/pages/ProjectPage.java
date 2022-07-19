@@ -19,8 +19,8 @@ public class ProjectPage {
     public boolean shouldToBeHaveTask(String nameTaskExpected) {
         boolean bl = false;
         List<WebElement> els = action.findWebElements(GROUP_DIV_NAME_TASK);
-        for (int i = 0; i < els.size(); i++) {
-            String actualName = action.getText(els.get(i));
+        for (WebElement el : els) {
+            String actualName = action.getText(el);
             if (actualName.equals(nameTaskExpected)) {
                 bl = true;
             }
@@ -47,8 +47,8 @@ public class ProjectPage {
         action.takeScreenshot();
         boolean bl = false;
         if (action.isVisible(GROUP_DIV_NAME_TASK)) {
-            for (int i = 0; i < els.size(); i++) {
-                if (action.getText(els.get(i)).equals(nameTask)) {
+            for (WebElement el : els) {
+                if (action.getText(el).equals(nameTask)) {
                     bl = false;
                 } else {
                     bl = true;

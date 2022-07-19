@@ -13,7 +13,8 @@ import static io.restassured.RestAssured.given;
 
 public class APIBase {
     public ConfigSettings configSettings;
-    public APIBase(){
+
+    public APIBase() {
         configSettings = new ConfigSettings(System.getProperty("user.dir"));
     }
 
@@ -66,7 +67,7 @@ public class APIBase {
         return res;
     }
 
-    public Response sendDelete(String accessToken, String basePathPT, long id){
+    public Response sendDelete(String accessToken, String basePathPT, long id) {
         RestAssured.baseURI = baseURI;
         basePath = basePathPT + "/" + id;
         Response res = given()

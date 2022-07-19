@@ -2,8 +2,9 @@ package test;
 
 import accessToken.Token;
 import api.ApiProject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import handle.HandleResponse;
+import handle.*;
 import io.restassured.response.Response;
 import microservices.Projects.steps.Project;
 import org.testng.annotations.Test;
@@ -16,23 +17,19 @@ import static microservices.Projects.models.Project.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class TC_CreateProject{
+public class TC_CreateProject {
     Token token = new Token();
     ApiProject apiProject = new ApiProject();
+
+    Handles handles = new Handles();
     HandleResponse handleResponse = new HandleResponse();
     Project project = new Project();
     public static long idProjectCreated;
-    Long idProjectCreate;
-    String nameProjectCreated;
-    int colorProjectCreated;
-    String urlProjectCreated;
-    Boolean favoriteProjectCreated;
-    int orderProjectCreated;
-    int statusCode;
 
     @Test(description = "API: Create project - Create successfully with valid token and valid all fields")
     public void Test01_createProject() {
         String accessToken = token.getToken();
+        handles.deleteAllProjects();
 
         String nameProject = "Shopping List";
         int colorProject = 46;
@@ -41,17 +38,17 @@ public class TC_CreateProject{
         mapPost.put(name, nameProject);
         mapPost.put(color, colorProject);
         mapPost.put(favorite, favoriteProject);
- //       mapPost.put(parent_id, 220330567);
+        //       mapPost.put(parent_id, 220330567);
 
         Response res = apiProject.createProject(accessToken, mapPost);
         JsonObject objProject = handleResponse.getJsonObject(res);
 
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
         idProjectCreated = project.getIdProject(objProject);
-        nameProjectCreated = project.getNameProject(objProject);
-        colorProjectCreated = project.getColorProject(objProject);
-        favoriteProjectCreated = project.getFavoriteProject(objProject);
-        urlProjectCreated = project.getUrlProject(objProject);
+        String nameProjectCreated = project.getNameProject(objProject);
+        int colorProjectCreated = project.getColorProject(objProject);
+        Boolean favoriteProjectCreated = project.getFavoriteProject(objProject);
+        String urlProjectCreated = project.getUrlProject(objProject);
         String str_idProjectCreated = project.getStrIdProject(objProject);
 
         // verify status code, body, response schema
@@ -63,7 +60,7 @@ public class TC_CreateProject{
     }
 
     @Test(description = "API: Create project - valid token and only require field")
-    public void Test02_createProjectWithRequireField(){
+    public void Test02_createProjectWithRequireField() {
         String accessToken = token.getToken();
 
         Map<String, Object> mapPost = new HashMap<>();
@@ -73,9 +70,9 @@ public class TC_CreateProject{
         Response res = apiProject.createProject(accessToken, mapPost);
         JsonObject objProject = handleResponse.getJsonObject(res);
 
-        statusCode = handleResponse.getStatusCode(res);
-        nameProjectCreated = project.getNameProject(objProject);
-        urlProjectCreated = project.getUrlProject(objProject);
+        int statusCode = handleResponse.getStatusCode(res);
+        String nameProjectCreated = project.getNameProject(objProject);
+        String urlProjectCreated = project.getUrlProject(objProject);
         String str_idProjectCreated = project.getStrIdProject(objProject);
 
         assertEquals(nameProjectCreated, nameProject);
@@ -84,31 +81,49 @@ public class TC_CreateProject{
     }
 
     @Test(description = "API: Create project - send request with the same body twice")
-    public void Test03_createProjectWithSameBodyTwice(){
+    public void Test03_createProjectWithSameBodyTwice() {
         String accessToken = token.getToken();
+        handles.deleteAllProjects();
 
-        // in the before testcase, already exist project with name "ki", it was executed in test02
-        Map<String, Object> mapPost = new HashMap<>();
-        mapPost.put(name, "ki");
-        Response res = apiProject.createProject(accessToken, mapPost);
+        // send request 1
+        Map<String, Object> mapPost1 = new HashMap<>();
+        mapPost1.put(name, "body-twice");
+        Response res1 = apiProject.createProject(accessToken, mapPost1);
 
-        statusCode = handleResponse.getStatusCode(res);
-        JsonObject ObjectCreatedTwice = handleResponse.getJsonObject(res);
+        int statusCode = handleResponse.getStatusCode(res1);
+        JsonObject ObjectCreatedTwice = handleResponse.getJsonObject(res1);
 
-        idProjectCreate = project.getIdProject(ObjectCreatedTwice);
-        nameProjectCreated = project.getNameProject(ObjectCreatedTwice);
-        orderProjectCreated = project.getOrderProject(ObjectCreatedTwice);
-        urlProjectCreated = project.getUrlProject(ObjectCreatedTwice);
+        String nameProjectCreated = project.getNameProject(ObjectCreatedTwice);
+        int orderProjectCreated = project.getOrderProject(ObjectCreatedTwice);
+        String urlProjectCreated = project.getUrlProject(ObjectCreatedTwice);
         String str_idProjectCreated = project.getStrIdProject(ObjectCreatedTwice);
 
         assertEquals(statusCode, 200);
-        assertEquals(nameProjectCreated, "ki");
-        assertEquals(orderProjectCreated, 3);
+        assertEquals(nameProjectCreated, "body-twice");
+        assertEquals(orderProjectCreated, 1);
         assertTrue(urlProjectCreated.contains(str_idProjectCreated));
+
+        // send request 2
+        Map<String, Object> mapPost2 = new HashMap<>();
+        mapPost2.put(name, "body-twice");
+        Response res2 = apiProject.createProject(accessToken, mapPost2);
+
+        int statusCode2 = handleResponse.getStatusCode(res2);
+        JsonObject ObjectCreatedTwice2 = handleResponse.getJsonObject(res2);
+
+        String nameProjectCreated2 = project.getNameProject(ObjectCreatedTwice2);
+        int orderProjectCreated2 = project.getOrderProject(ObjectCreatedTwice2);
+        String urlProjectCreated2 = project.getUrlProject(ObjectCreatedTwice2);
+        String str_idProjectCreated2 = project.getStrIdProject(ObjectCreatedTwice2);
+
+        assertEquals(statusCode2, 200);
+        assertEquals(nameProjectCreated2, "body-twice");
+        assertEquals(orderProjectCreated2, 2);
+        assertTrue(urlProjectCreated2.contains(str_idProjectCreated2));
     }
 
     @Test(description = "API: Create project - invalid of type field name")
-    public void Test04_createProjectWithInvalidTypeOfName(){
+    public void Test04_createProjectWithInvalidTypeOfName() {
         String accessToken = token.getToken();
 
         // name = integer
@@ -131,7 +146,7 @@ public class TC_CreateProject{
     }
 
     @Test(description = "API: Create project - without name")
-    public void Test05_createProjectWithoutName(){
+    public void Test05_createProjectWithoutName() {
         String accessToken = token.getToken();
 
         // name = ""
@@ -140,7 +155,7 @@ public class TC_CreateProject{
 
         Response res = apiProject.createProject(accessToken, mapPost1);
 
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
         assertEquals(statusCode, 400);
 
         // name = null
@@ -154,8 +169,8 @@ public class TC_CreateProject{
 
         // do not send name
         Map<String, Object> mapPost3 = new HashMap<>();
-        mapPost3.put("color", 45);
-        mapPost3.put("favorite", false);
+        mapPost3.put(color, 45);
+        mapPost3.put(favorite, false);
 
         Response r = apiProject.createProject(accessToken, mapPost3);
 
@@ -164,7 +179,7 @@ public class TC_CreateProject{
     }
 
     @Test(description = "API: Create project - invalid value of optional field")
-    public void Test06_createProjectWithInvalidValueOfOptionalFields(){
+    public void Test06_createProjectWithInvalidValueOfOptionalFields() {
         String accessToken = token.getToken();
 
         // parent_id = non-existing id
@@ -187,7 +202,7 @@ public class TC_CreateProject{
     }
 
     @Test(description = "API: Create project - invalid type of optional field")
-    public void Test07_createProjectWithInvalidTypeOfOptionalFields(){
+    public void Test07_createProjectWithInvalidTypeOfOptionalFields() {
         String accessToken = token.getToken();
 
         // favorite = integer
@@ -196,7 +211,7 @@ public class TC_CreateProject{
         mapPost.put(favorite, 123);
 
         Response res = apiProject.createProject(accessToken, mapPost);
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
 
         assertEquals(statusCode, 400);
 
@@ -212,7 +227,7 @@ public class TC_CreateProject{
     }
 
     @Test(description = "API: Create project - undefine field")
-    public void Test08_createProjectWithUndefineField(){
+    public void Test08_createProjectWithUndefineField() {
         String accessToken = token.getToken();
 
         Map<String, Object> mapPost = new HashMap<>();
@@ -220,25 +235,25 @@ public class TC_CreateProject{
         mapPost.put("constant", 34);
 
         Response res = apiProject.createProject(accessToken, mapPost);
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
 
         assertEquals(statusCode, 400);
     }
 
     @Test(description = "API: Create project - empty body")
-    public void Test09_createProjectWithEmptyBody(){
+    public void Test09_createProjectWithEmptyBody() {
         String accessToken = token.getToken();
 
         Map<String, Object> mapPost = new HashMap<>();
 
         Response res = apiProject.createProject(accessToken, mapPost);
 
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
         assertEquals(statusCode, 400);
     }
 
     @Test(description = "API: Create project - without token")
-    public void Test10_createProjectWithoutToken(){
+    public void Test10_createProjectWithoutToken() {
         String accessToken = "";
 
         Map<String, Object> mapPost = new HashMap<>();
@@ -247,12 +262,12 @@ public class TC_CreateProject{
 
         Response res = apiProject.createProject(accessToken, mapPost);
 
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
         assertEquals(statusCode, 401);
     }
 
     @Test(description = "API: Create project - non-existing token")
-    public void Test11_createProjectWithNonExistingToken(){
+    public void Test11_createProjectWithNonExistingToken() {
         String accessToken = "!@#";
 
         Map<String, Object> mapPost = new HashMap<>();
@@ -261,31 +276,52 @@ public class TC_CreateProject{
 
         Response res = apiProject.createProject(accessToken, mapPost);
 
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
         assertEquals(statusCode, 401);
     }
 
     @Test(description = "API: Create project - expired token")
-    public void Test12_createProjectWithExpiredToken(){
+    public void Test12_createProjectWithExpiredToken() {
         String accessToken = tokenExpired;
 
         Map<String, Object> mapPost = new HashMap<>();
         mapPost.put(name, "expired token");
 
         Response res = apiProject.createProject(accessToken, mapPost);
-        statusCode = handleResponse.getStatusCode(res);
+        int statusCode = handleResponse.getStatusCode(res);
         assertEquals(statusCode, 401);
     }
 
-    @Test(description = "API: Create project - when reached maximum projects")
-    public void Test14_createProjectWhenReachedMaximumProjects(){
+    @Test(description = "API: Create project - different method")
+    public void Test13_createProjectWithDifferentMethod() {
         String accessToken = token.getToken();
-        Map<String, Object> mapPost = new HashMap<>();
-        mapPost.put(name, "maximum projects");
 
-        // before available exist 7 projects in this account
-        Response res = apiProject.createProject(accessToken, mapPost);
-        statusCode = handleResponse.getStatusCode(res);
-        assertEquals(statusCode, 403);
+        Response res = apiProject.createProjectWithGetMethod(accessToken);
+        int statusCode = handleResponse.getStatusCode(res);
+        assertEquals(statusCode, 405);
+    }
+
+    @Test(description = "API: Create project - when reached maximum projects")
+    public void Test14_createProjectWhenReachedMaximumProjects() {
+        String accessToken = token.getToken();
+
+        Response r = apiProject.getAllProjects(accessToken);
+        JsonArray arr = handleResponse.getJsonArray(r);
+        for (int i = 0; i < 7; i++) {
+            if (arr.size() < 8) {
+                Map<String, Object> mapPost = new HashMap<>();
+                mapPost.put(name, "create");
+
+                apiProject.createProject(accessToken, mapPost);
+            } else if (arr.size() == 8) {
+                Map<String, Object> mapPost = new HashMap<>();
+                mapPost.put(name, "maximum projects");
+
+                // available exist 8 projects (includes Inbox project) in this account
+                Response res = apiProject.createProject(accessToken, mapPost);
+                int statusCode = handleResponse.getStatusCode(res);
+                assertEquals(statusCode, 403);
+            }
+        }
     }
 }

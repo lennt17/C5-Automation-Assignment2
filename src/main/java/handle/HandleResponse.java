@@ -7,19 +7,20 @@ import io.restassured.response.Response;
 
 public class HandleResponse {
     Gson g = new Gson();
-    public JsonObject getJsonObject(Response re){
+
+    public JsonObject getJsonObject(Response re) {
         Object res = re.as(Object.class);
         String a = g.toJson(res);
         return g.fromJson(a, JsonObject.class);
     }
 
-    public JsonArray getJsonArray(Response re){
+    public JsonArray getJsonArray(Response re) {
         Object res = re.as(Object.class);
         String a = g.toJson(res);
         return g.fromJson(a, JsonArray.class);
     }
 
-    public int getStatusCode(Response response){
+    public int getStatusCode(Response response) {
         return response.getStatusCode();
     }
 
@@ -27,15 +28,15 @@ public class HandleResponse {
         return obj.get(fieldName).getAsString();
     }
 
-    public int getIntValueOfField(String fieldName, JsonObject obj){
+    public int getIntValueOfField(String fieldName, JsonObject obj) {
         return obj.get(fieldName).getAsInt();
     }
 
-    public long getLongValueOfField(String fieldName, JsonObject obj){
+    public long getlongValueOfField(String fieldName, JsonObject obj) {
         return obj.get(fieldName).getAsLong();
     }
 
-    public Boolean getBooleanValueOfField(String fieldName, JsonObject obj){
+    public Boolean getBooleanValueOfField(String fieldName, JsonObject obj) {
         return obj.get(fieldName).getAsBoolean();
     }
 }

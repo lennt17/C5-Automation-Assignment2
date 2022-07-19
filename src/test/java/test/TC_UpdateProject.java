@@ -42,8 +42,30 @@ public class TC_UpdateProject {
         assertEquals(nameProjectUpdated, nameProjectUpdate);
     }
 
+    @Test(description = "API: Update project - send request with same body")
+    public void Test02_updateProjectWithSameBody() {
+        String accessToken = token.getToken();
+        long idProjectGet = idProjectCreated;
+
+        // send request1
+        Map<String, Object> mapPut = new HashMap<>();
+        mapPut.put(name, "updateTwice");
+
+        Response res = apiProject.updateProject(accessToken, idProjectGet, mapPut);
+        int statusCode = handleResponse.getStatusCode(res);
+        assertEquals(statusCode, 204);
+
+        // send request2
+        Map<String, Object> mapPut2 = new HashMap<>();
+        mapPut2.put(name, "updateTwice");
+
+        Response res2 = apiProject.updateProject(accessToken, idProjectGet, mapPut2);
+        int statusCode2 = handleResponse.getStatusCode(res2);
+        assertEquals(statusCode2, 400);
+    }
+
     @Test(description = "API: Update project - with field undefine")
-    public void Test04_updateProjectWithFieldUndefine() {
+    public void Test03_updateProjectWithFieldUndefine() {
         String accessToken = token.getToken();
 
         long idProjectUpdate = idProjectCreated;
@@ -59,7 +81,7 @@ public class TC_UpdateProject {
     }
 
     @Test(description = "API: Update project - with invalid type of optional field")
-    public void Test05_updateProjectWithInvalidTypeOfOptionField() {
+    public void Test04_updateProjectWithInvalidTypeOfOptionField() {
         String accessToken = token.getToken();
 
         long idProjectUpdate = idProjectCreated;
@@ -75,7 +97,7 @@ public class TC_UpdateProject {
 
         // map for update color
         Map<String, Object> mapPutColor = new HashMap<>();
-        mapPutColor.put("color", "green");
+        mapPutColor.put(color, "green");
 
         Response resColor = apiProject.updateProject(accessToken, idProjectUpdate, mapPutColor);
         int statusCode2 = handleResponse.getStatusCode(resColor);
@@ -84,7 +106,7 @@ public class TC_UpdateProject {
 
         // map for update favorite
         Map<String, Object> mapPutFavorite = new HashMap<>();
-        mapPutFavorite.put("favorite", 123);
+        mapPutFavorite.put(favorite, 123);
 
         Response resFavorite = apiProject.updateProject(accessToken, idProjectUpdate, mapPutFavorite);
         int statusCode3 = handleResponse.getStatusCode(resFavorite);
@@ -93,7 +115,7 @@ public class TC_UpdateProject {
     }
 
     @Test(description = "API: Update project - with invalid value of optional field")
-    public void Test06_updateProjectWithInvalidValueOfOptionalField(){
+    public void Test05_updateProjectWithInvalidValueOfOptionalField() {
         String accessToken = token.getToken();
         long idProjectUpdate = idProjectCreated;
 
@@ -106,21 +128,21 @@ public class TC_UpdateProject {
 
         // favorite = null
         Map<String, Object> mapPut2 = new HashMap<>();
-        mapPut2.put("favorite", null);
+        mapPut2.put(favorite, null);
         Response res2 = apiProject.updateProject(accessToken, idProjectUpdate, mapPut2);
         int statusCode2 = handleResponse.getStatusCode(res2);
         assertEquals(statusCode2, 400);
 
         // color = 56789
         Map<String, Object> mapPut3 = new HashMap<>();
-        mapPut3.put("color", 56789);
+        mapPut3.put(color, 56789);
         Response res3 = apiProject.updateProject(accessToken, idProjectUpdate, mapPut3);
         int statusCode3 = handleResponse.getStatusCode(res3);
         assertEquals(statusCode3, 400);
     }
 
     @Test(description = "API: Update project - without token")
-    public void Test07_updateProjectWithoutToken(){
+    public void Test06_updateProjectWithoutToken() {
         String accessToken = "";
         long idProjectUpdate = idProjectCreated;
 
@@ -133,7 +155,7 @@ public class TC_UpdateProject {
     }
 
     @Test(description = "API: Update project - with non-existing token")
-    public void Test08_updateProjectWithNonExistingToken(){
+    public void Test07_updateProjectWithNonExistingToken() {
         String accessToken = "!@#123";
         long idProjectUpdate = idProjectCreated;
 
@@ -146,7 +168,7 @@ public class TC_UpdateProject {
     }
 
     @Test(description = "API: Update project - with expired token")
-    public void Test09_updateProjectWithExpiredToken(){
+    public void Test08_updateProjectWithExpiredToken() {
         String accessToken = tokenExpired;
         long idProjectUpdate = idProjectCreated;
 
@@ -158,8 +180,20 @@ public class TC_UpdateProject {
         assertEquals(statusCode, 401);
     }
 
+    @Test(description = "Update project with different method")
+    public void Test9_updateProjectWithDifferentMethod() {
+        String accessToken = token.getToken();
+        long idProjectUpdate = idProjectCreated;
+
+        Map<String, Object> mapPut = new HashMap<>();
+
+        Response res = apiProject.updateProjectWithGetMethod(accessToken, idProjectUpdate, mapPut);
+        int statusCode = handleResponse.getStatusCode(res);
+        assertEquals(statusCode, 400);
+    }
+
     @Test(description = "API: Update project - with empty body")
-    public void Test11_updateProjectWithEmptyBody(){
+    public void Test10_updateProjectWithEmptyBody() {
         String accessToken = token.getToken();
         long idProjectUpdate = idProjectCreated;
 

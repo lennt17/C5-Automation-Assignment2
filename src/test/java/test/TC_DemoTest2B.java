@@ -4,9 +4,11 @@ import api.ApiProject;
 import api.ApiTask;
 import com.google.gson.JsonObject;
 import handle.HandleResponse;
+import handle.Handles;
 import io.restassured.response.Response;
 import listener.TestNGListener;
 import microservices.Projects.steps.Project;
+import microservices.Tasks.steps.Tasks;
 import org.testng.annotations.Test;
 
 import pages.ProjectPage;
@@ -34,7 +36,9 @@ public class TC_DemoTest2B extends TestNGListener {
     HandleResponse handleResponse = new HandleResponse();
     ApiProject apiProject = new ApiProject();
     Project project = new Project();
+    Handles handles = new Handles();
     ApiTask apiTask = new ApiTask();
+    Tasks tasks = new Tasks();
     Token token = new Token();
 
     public TC_DemoTest2B() {
@@ -43,8 +47,9 @@ public class TC_DemoTest2B extends TestNGListener {
     }
 
     @Test(description = "API & UI: Create project and task through API and then verify in WebUI")
-    public void Test2B_createProjectAndTaskThenVerifyInUI(){
+    public void Test2B_createProjectAndTaskThenVerifyInUI() {
         String accessToken = token.getToken();
+        handles.deleteAllProjects();
 
         // Create project through API
         Map<String, Object> mapPostProject = new HashMap<>();
@@ -53,7 +58,7 @@ public class TC_DemoTest2B extends TestNGListener {
         Response res = apiProject.createProject(accessToken, mapPostProject);
 
         JsonObject objectProjectCreated = handleResponse.getJsonObject(res);
-        Long idProjectCreate = project.getIdProject(objectProjectCreated);
+        long idProjectCreate = project.getIdProject(objectProjectCreated);
 
         // Create task through API
         Map<String, Object> mapPostTask = new HashMap<>();
@@ -65,7 +70,7 @@ public class TC_DemoTest2B extends TestNGListener {
 
         Response response = apiTask.createTask(accessToken, mapPostTask);
         JsonObject objectTaskCreated = handleResponse.getJsonObject(response);
-        long idTask = objectTaskCreated.get("id").getAsLong();
+        long idTask = tasks.getIdTask(objectTaskCreated); ;
 
         // Verify value project and task in Web UI
         homePage = new HomePage(action);

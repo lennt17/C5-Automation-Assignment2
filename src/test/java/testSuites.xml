@@ -8,7 +8,6 @@
             <class name="test.TC_GetAProject"/>
             <class name="test.TC_UpdateProject"/>
             <class name="test.TC_GetAllProject"/>
-            <class name="test.TC_DeleteProject"/>
             <class name="test.TC_DemoTest2B"/>
         </classes>
     </test>

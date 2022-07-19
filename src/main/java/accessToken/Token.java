@@ -11,6 +11,7 @@ import java.util.Map;
 
 import static constant.Endpoint.*;
 import static io.restassured.RestAssured.given;
+
 import api.APIBase;
 
 public class Token extends APIBase {
@@ -18,11 +19,11 @@ public class Token extends APIBase {
     String accessToken;
     Map<String, Object> mapLogin = new HashMap<>();
 
-    public String getToken(){
+    public String getToken() {
         RestAssured.baseURI = baseURIToken;
         RestAssured.basePath = "";
         String email = configSettings.getEmail();
-        String password =configSettings.getPassword();
+        String password = configSettings.getPassword();
         mapLogin.put("email", email);
         mapLogin.put("password", password);
 

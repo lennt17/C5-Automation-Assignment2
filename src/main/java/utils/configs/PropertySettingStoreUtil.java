@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.Properties;
+
 public class PropertySettingStoreUtil {
     private static final String PROPERTY_FILE_EXTENSION = ".properties";
     private static final String DF_CHARSET = "UTF-8";
@@ -26,7 +27,7 @@ public class PropertySettingStoreUtil {
         }
     }
 
-    public static Properties getSettings(String projectFolderLocation, String settingName) throws IOException  {
+    public static Properties getSettings(String projectFolderLocation, String settingName) throws IOException {
         return getSettings(projectFolderLocation + File.separator + SETTING_ROOT_FOLDER_NAME + File.separator
                 + settingName + PROPERTY_FILE_EXTENSION);
     }
